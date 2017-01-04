@@ -101,7 +101,7 @@
         /***GOOGLE MAP INITIALIZATION***/
         init();
 
-        /***MAIL SCRIPT***/ 
+        // /***MAIL SCRIPT***/ // Upadted in V. 1.1
         $('form#contact-form').on('submit', function (e) {
             e.preventDefault(); //Prevents default submit
             var form = $(this);
@@ -114,18 +114,18 @@
                 data: post_data,
                 dataType: "json"
             })
-                .complete(function(data){
-                    debugger
+                .success(function () {
                     $('div#form-loader').fadeOut(500);
-                    $("#submit").removeAttr('disabled', 'disabled'); // Enable submit button
-                })
-                .done(function () {
                     Materialize.toast('Message Sent! I will contact you shortly, Thanks', 4000);
                     $("form#contact-form")[0].reset();
                     Materialize.updateTextFields(); // Rest floating labels
+                    $("#submit").removeAttr('disabled', 'disabled'); // Enable submit button
+
                 })
-                .fail(function () {
+                .error(function () {
+                    $('div#form-loader').fadeOut(500);
                     Materialize.toast('Sorry! Something Wrong, Try Again', 4000);
+                    $("#submit").removeAttr('disabled', 'disabled'); // Enable submit button
                 });
         });
 

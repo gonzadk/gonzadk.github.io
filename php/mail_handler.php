@@ -6,7 +6,7 @@ $mailto  = 'gonzaloterzano@gmail.com';
 
 
 $name     	= strip_tags($_POST['first_name']);
-$sub     	= strip_tags($_POST['sub']);
+$sub     	= strip_tags($_POST['subject']);
 $email      = strip_tags($_POST['email']);
 $comments   = strip_tags($_POST['message']);
 

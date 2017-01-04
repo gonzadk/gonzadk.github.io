@@ -109,9 +109,10 @@
             var post_data = form.serialize(); //Serialized the form data 
             $('div#form-loader').removeClass('is-hidden').fadeIn(500);
             $.ajax({
-                type: 'POST',
                 url: 'https://formspree.io/gonzaloterzano@gmail.com', // Form script
-                data: post_data
+                method: 'POST',
+                data: post_data,
+                dataType: "json"
             })
                 .done(function () {
                     $('div#form-loader').fadeOut(500);

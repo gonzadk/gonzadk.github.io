@@ -102,7 +102,7 @@
         init();
 
         // /***MAIL SCRIPT***/ // Upadted in V. 1.1
-        $('form#contact-form').on('submit', function (e) {
+        $('form.contact-form').on('submit', function (e) {
             e.preventDefault(); //Prevents default submit
             var form = $(this);
             $("#submit").attr('disabled', 'disabled'); //Disable the submit button on click
@@ -117,7 +117,8 @@
                 .success(function () {
                     $('div#form-loader').fadeOut(500);
                     Materialize.toast('Message Sent! I will contact you shortly, Thanks', 4000);
-                    $("form#contact-form")[0].reset();
+                    $("form.contact-form")[0].reset();
+                    $("form.contact-form")[1].reset();
                     Materialize.updateTextFields(); // Rest floating labels
                     $("#submit").removeAttr('disabled', 'disabled'); // Enable submit button
 
@@ -132,11 +133,24 @@
 
     });
 
+    $('#englishClick').on('click', function() {
+        $('#loading').fadeOut(500);
+        $('[data-lenguage="english"]').each(function(){
+            $(this).show();
+        })
+    })
+
+    $('#espaniolClick').on('click', function() {
+        $('#loading').fadeOut(500);
+        $('[data-lenguage="espaniol"]').each(function(){
+            $(this).show();
+        })
+    })
 
     jQuery(window).load(function () {
 
         /***FADES OUT PRE-LOADER***/
-        $('div#loading').fadeOut(500);
+        $('#loading-center').fadeOut(500);
 
         /***SCROLL ANIMATION***/
         window.sr = ScrollReveal({reset: false}); // reset false stops repetition of animation

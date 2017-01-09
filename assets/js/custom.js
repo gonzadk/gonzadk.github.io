@@ -1,9 +1,121 @@
-var englishPresentation = "Hello! My name is Gonzalo Terzano. I am a Semi-Senior Web Developer, with 2-3 years of experience in the area. I have many skills to work as a team member and also individually. I always push myself to the limit in order to achieve excellece in my work.";
-var spanishPresentation = "Hola! Soy Gonzalo Terzano. Semi-Senior Web Developer, con 2-3 años de experiencia en tecnologías de este area. Poseo habilidades para trabajar tanto en equipo como individualmente. Con el objetivo de obtener excelentes resultados en las tareas asignadas siempre ofrezco mi mayor esfuerzo y dedicación.";
-var writingDelay = 30;
-
 (function ($) {
     "use strict";
+
+    var presentation = {
+        english: "Hello! My name is Gonzalo Terzano. I am a Semi-Senior Web Developer, with 2-3 years of experience in the area. I have many skills to work as a team member and also individually. I always push myself to the limit in order to achieve excellece in my work.",
+        spanish: "Hola! Soy Gonzalo Terzano. Semi-Senior Web Developer, con 2-3 años de experiencia en tecnologías de este area. Poseo habilidades para trabajar tanto en equipo como individualmente. Con el objetivo de obtener excelentes resultados en las tareas asignadas siempre ofrezco mi mayor esfuerzo y dedicación.",
+        delay: 25
+    };
+    var particlesConfig = {
+        "particles": {
+            "number": {
+                "value": 90,
+                "density": {
+                    "enable": true,
+                    "value_area": 400
+                }
+            },
+            "color": {
+                "value": "#1976d2"
+            },
+            "shape": {
+                "type": "circle",
+                "stroke": {
+                    "width": 0,
+                    "color": "#000000"
+                },
+                "polygon": {
+                    "nb_sides": 5
+                },
+                "image": {
+                    "src": "img/github.svg",
+                    "width": 100,
+                    "height": 100
+                }
+            },
+            "opacity": {
+                "value": 0.5,
+                "random": false,
+                "anim": {
+                    "enable": false,
+                    "speed": 1,
+                    "opacity_min": 0.1,
+                    "sync": false
+                }
+            },
+            "size": {
+                "value": 3,
+                "random": true,
+                "anim": {
+                    "enable": false,
+                    "speed": 40,
+                    "size_min": 0.1,
+                    "sync": false
+                }
+            },
+            "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#1976d2",
+                "opacity": 0.4,
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 6,
+                "direction": "none",
+                "random": false,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false,
+                "attract": {
+                    "enable": false,
+                    "rotateX": 600,
+                    "rotateY": 1200
+                }
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": {
+                    "enable": true,
+                    "mode": "grab"
+                },
+                "onclick": {
+                    "enable": true,
+                    "mode": "repulse"
+                },
+                "resize": true
+            },
+            "modes": {
+                "grab": {
+                    "distance": 400,
+                    "line_linked": {
+                        "opacity": 1
+                    }
+                },
+                "bubble": {
+                    "distance": 400,
+                    "size": 40,
+                    "duration": 2,
+                    "opacity": 8,
+                    "speed": 3
+                },
+                "repulse": {
+                    "distance": 200,
+                    "duration": 0.4
+                },
+                "push": {
+                    "particles_nb": 4
+                },
+                "remove": {
+                    "particles_nb": 2
+                }
+            }
+        },
+        "retina_detect": true
+    };
 
     jQuery(document).ready(function () {
 
@@ -138,7 +250,7 @@ var writingDelay = 30;
 
                 var newText = text.slice(1);
                 autoWrite(querySelector, newText); 
-            }, writingDelay)
+            }, presentation.delay)
         } else return;
     }
     
@@ -148,7 +260,7 @@ var writingDelay = 30;
         $('[data-lenguage="english"]').each(function(){
             $(this).show();
         });
-        autoWrite('#englishPresentation', englishPresentation);
+        autoWrite('#englishPresentation', presentation.english);
     })
 
     $('#espaniolClick').on('click', function() {
@@ -156,121 +268,10 @@ var writingDelay = 30;
         $('[data-lenguage="espaniol"]').each(function(){
             $(this).show();
         });
-        autoWrite('#spanishPresentation', spanishPresentation);
+        autoWrite('#spanishPresentation', presentation.spanish);
     })
 
-    var colors = ['72,35,68', '43,81,102', '66,152,103', '250,178,67', '224,33,48'];
-
-    particlesJS("particles-js", {
-    "particles": {
-        "number": {
-            "value": 90,
-            "density": {
-                "enable": true,
-                "value_area": 400
-            }
-        },
-        "color": {
-            "value": "#1976d2"
-        },
-        "shape": {
-            "type": "circle",
-            "stroke": {
-                "width": 0,
-                "color": "#000000"
-            },
-            "polygon": {
-                "nb_sides": 5
-            },
-            "image": {
-                "src": "img/github.svg",
-                "width": 100,
-                "height": 100
-            }
-        },
-        "opacity": {
-            "value": 0.5,
-            "random": false,
-            "anim": {
-                "enable": false,
-                "speed": 1,
-                "opacity_min": 0.1,
-                "sync": false
-            }
-        },
-        "size": {
-            "value": 3,
-            "random": true,
-            "anim": {
-                "enable": false,
-                "speed": 40,
-                "size_min": 0.1,
-                "sync": false
-            }
-        },
-        "line_linked": {
-            "enable": true,
-            "distance": 150,
-            "color": "#1976d2",
-            "opacity": 0.4,
-            "width": 1
-        },
-        "move": {
-            "enable": true,
-            "speed": 6,
-            "direction": "none",
-            "random": false,
-            "straight": false,
-            "out_mode": "out",
-            "bounce": false,
-            "attract": {
-                "enable": false,
-                "rotateX": 600,
-                "rotateY": 1200
-            }
-        }
-    },
-    "interactivity": {
-        "detect_on": "canvas",
-        "events": {
-            "onhover": {
-                "enable": true,
-                "mode": "grab"
-            },
-            "onclick": {
-                "enable": true,
-                "mode": "repulse"
-            },
-            "resize": true
-        },
-        "modes": {
-            "grab": {
-                "distance": 400,
-                "line_linked": {
-                    "opacity": 1
-                }
-            },
-            "bubble": {
-                "distance": 400,
-                "size": 40,
-                "duration": 2,
-                "opacity": 8,
-                "speed": 3
-            },
-            "repulse": {
-                "distance": 200,
-                "duration": 0.4
-            },
-            "push": {
-                "particles_nb": 4
-            },
-            "remove": {
-                "particles_nb": 2
-            }
-        }
-    },
-    "retina_detect": true
-    });
+    particlesJS("particles-js", particlesConfig);
 
     jQuery(window).load(function () {
 

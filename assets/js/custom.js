@@ -1,3 +1,7 @@
+var englishPresentation = "Hello! My name is Gonzalo Terzano. I am a Semi-Senior Web Developer, with 2-3 years of experience in the area. I have many skills to work as a team member and also individually. I always push myself to the limit in order to achieve excellece in my work.";
+var spanishPresentation = "Hola! Soy Gonzalo Terzano. Semi-Senior Web Developer, con 2-3 años de experiencia en tecnologías de este area. Poseo habilidades para trabajar tanto en equipo como individualmente. Con el objetivo de obtener excelentes resultados en las tareas asignadas siempre ofrezco mi mayor esfuerzo y dedicación.";
+var writingDelay = 30;
+
 (function ($) {
     "use strict";
 
@@ -127,18 +131,32 @@
 
     });
 
+    function autoWrite(querySelector, text) {
+        if (text.length) {
+            setTimeout(function(){
+                $(querySelector).html($(querySelector).html() + text[0]);
+
+                var newText = text.slice(1);
+                autoWrite(querySelector, newText); 
+            }, writingDelay)
+        } else return;
+    }
+    
+
     $('#englishClick').on('click', function() {
         $('#loading').fadeOut(500);
         $('[data-lenguage="english"]').each(function(){
             $(this).show();
-        })
+        });
+        autoWrite('#englishPresentation', englishPresentation);
     })
 
     $('#espaniolClick').on('click', function() {
         $('#loading').fadeOut(500);
         $('[data-lenguage="espaniol"]').each(function(){
             $(this).show();
-        })
+        });
+        autoWrite('#spanishPresentation', spanishPresentation);
     })
 
     var colors = ['72,35,68', '43,81,102', '66,152,103', '250,178,67', '224,33,48'];

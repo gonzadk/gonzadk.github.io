@@ -10,7 +10,6 @@
                 $('.bottom-bar').toggleClass('bottom-transform');
             });
 
-
         /***MENU CLOSE***/
         $('.section,div#menu-options a').on('click', function () {
             $('nav#theMenu').removeClass('menu-open');
@@ -43,7 +42,6 @@
             });
         });
 
-
         /***SCROLL TO TOP***/
         $(window).scroll(function () {
             if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
@@ -53,7 +51,6 @@
             }
         });
 
-
         $('div#scrollup').on('click', function () {
             $("html,body").animate({
                 scrollTop: 0
@@ -62,14 +59,12 @@
             return false;
         });
 
-
         /***SKILLS***/
         $('div.skillbar').each(function () {
             $(this).find('div.skillbar-bar').css({
                 width: $(this).attr('data-percent')
             });
         });
-
 
         /***GOOGLE MAP***/
         function init() {
@@ -129,7 +124,6 @@
                     $("#submit").removeAttr('disabled', 'disabled'); // Enable submit button
                 });
         });
-
 
     });
 
@@ -275,7 +269,6 @@
         sr.reveal('#about-card,.map-label', {duration: 1400, delay: 500});
         sr.reveal('#v-card-holder', {duration: 1400, distance: '150px'});
         sr.reveal('.skillbar-bar', {duration: 1800, delay: 300, distance: '0'});});
-
 
 })(jQuery);
 

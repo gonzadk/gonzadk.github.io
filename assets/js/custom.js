@@ -147,6 +147,8 @@
         })
     })
 
+    var colors = ['72,35,68', '43,81,102', '66,152,103', '250,178,67', '224,33,48'];
+
     particlesJS("particles-js", {
     "particles": {
         "number": {

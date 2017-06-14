@@ -2,8 +2,8 @@
     "use strict";
 
     var presentation = {
-        english: "Hello! My name is Gonzalo Terzano. I am a Semi-Senior Web Developer, with 2-3 years of experience in the area. I have many skills to work as a team member and also individually. I always push myself to the limit in order to achieve excellece in my work.",
-        spanish: "Hola! Soy Gonzalo Terzano. Semi-Senior Web Developer, con 2-3 años de experiencia en tecnologías de este area. Poseo habilidades para trabajar tanto en equipo como individualmente. Con el objetivo de obtener excelentes resultados en las tareas asignadas siempre ofrezco mi mayor esfuerzo y dedicación.",
+        english: "Hello! My name is Gonzalo Terzano. I am a Semi-Senior Web Developer, with 3-4 years of experience in the area. I have many skills to work as a team member and also individually. I always push myself to the limit in order to achieve excellece in my work.",
+        spanish: "Hola! Soy Gonzalo Terzano. Semi-Senior Web Developer, con 3-4 años de experiencia en tecnologías de este area. Poseo habilidades para trabajar tanto en equipo como individualmente. Con el objetivo de obtener excelentes resultados en las tareas asignadas siempre ofrezco mi mayor esfuerzo y dedicación.",
         delay: 25
     };
     var particlesConfig = {

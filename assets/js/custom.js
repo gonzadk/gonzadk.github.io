@@ -1,12 +1,14 @@
 (function ($) {
     "use strict";
 
-    var presentation = {
-        english: "Hello! My name is Gonzalo Terzano. I am a Semi-Senior Web Developer, with 3-4 years of experience in the area. I have many skills to work as a team member and also individually. I always push myself to the limit in order to achieve excellece in my work.",
-        spanish: "Hola! Soy Gonzalo Terzano. Semi-Senior Web Developer, con 3-4 años de experiencia en tecnologías de este area. Poseo habilidades para trabajar tanto en equipo como individualmente. Con el objetivo de obtener excelentes resultados en las tareas asignadas siempre ofrezco mi mayor esfuerzo y dedicación.",
+    const presentation = {
+        english: "I'm a 29 years old Sr Frontend Developer from Argentina and currently based in " + 
+                 "Córdoba. I enjoy working on extensive teams and sharing my knowledge in order to " +
+                 "help other people to achieve professional success. I am currently focused on " +
+                 "improving my leadership skills and I am also an amateur basketball player.",
         delay: 25
     };
-    var particlesConfig = {
+    const particlesConfig = {
         "particles": {
             "number": {
                 "value": 90,
@@ -254,40 +256,27 @@
         } else return;
     }
     
-
-    $('#englishClick').on('click', function() {
-        $('#loading').fadeOut(500);
-        $('[data-lenguage="english"]').each(function(){
-            $(this).show();
-        });
-        autoWrite('#englishPresentation', presentation.english);
-    })
-
-    $('#espaniolClick').on('click', function() {
-        $('#loading').fadeOut(500);
-        $('[data-lenguage="espaniol"]').each(function(){
-            $(this).show();
-        });
-        autoWrite('#spanishPresentation', presentation.spanish);
-    })
-
     particlesJS("particles-js", particlesConfig);
 
     jQuery(window).load(function () {
+        setTimeout(function() {
+            /***FADES OUT PRE-LOADER***/
+            $('#loading').fadeOut(500);
 
-        /***FADES OUT PRE-LOADER***/
-        $('#loading-center').fadeOut(500);
+            autoWrite('#englishPresentation', presentation.english);
 
-        /***SCROLL ANIMATION***/
-        window.sr = ScrollReveal({reset: false}); // reset false stops repetition of animation
-        var commonCards = '#port-add-icon,#map-card,.interest-icon-even,.interest-icon,' +
-            '.timeline-dot, .timeline-content,#add-more,#skills-card,#testimonials-card,' +
-            '#portfolios-card,#interest-card,#p-one,#p-two,#p-three,#blog-card,#contact-card,#clients';
-        // Customizing a reveal set
-        sr.reveal(commonCards, {duration: 1100});
-        sr.reveal('#about-card,.map-label', {duration: 1400, delay: 500});
-        sr.reveal('#v-card-holder', {duration: 1400, distance: '150px'});
-        sr.reveal('.skillbar-bar', {duration: 1800, delay: 300, distance: '0'});});
+            /***SCROLL ANIMATION***/
+            window.sr = ScrollReveal({reset: false}); // reset false stops repetition of animation
+            var commonCards = '#port-add-icon,#map-card,.interest-icon-even,.interest-icon,' +
+                '.timeline-dot, .timeline-content,#add-more,#skills-card,#testimonials-card,' +
+                '#portfolios-card,#interest-card,#p-one,#p-two,#p-three,#blog-card,#contact-card,#clients';
+            // Customizing a reveal set
+            sr.reveal(commonCards, {duration: 1100});
+            sr.reveal('#about-card,.map-label', {duration: 1400, delay: 500});
+            sr.reveal('#v-card-holder', {duration: 1400, distance: '150px'});
+            sr.reveal('.skillbar-bar', {duration: 1800, delay: 300, distance: '0'});
+        }, 1500);
+    });
 
 })(jQuery);
 

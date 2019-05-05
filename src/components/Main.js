@@ -4,10 +4,11 @@ require('bootstrap/dist/css/bootstrap.min.css');
 require('styles/App.scss');
 
 import React from 'react';
-import ScrollReveal from 'scrollreveal'
+// import ScrollReveal from 'scrollreveal'
 import PreLoading from './PreLoading/PreLoading';
 import Description from './Description/Description';
 import Education from './Education/Education';
+import HeaderParticles from './HeaderParticles/HeaderParticles';
 // import LeftMenu from './LeftMenu/LeftMenu';
 import AboutMe from './AboutMe/AboutMe';
 
@@ -28,14 +29,15 @@ class AppComponent extends React.Component {
 
   getHeader() {
     return this.isLoading ? null : (
-      <main>
+      <section>
         <header>
+          <HeaderParticles/>
           {/* <LeftMenu/> */}
           <AboutMe/>
         </header>
         <Description/>
         <Education/>
-      </main>
+      </section>
     );
   }
   

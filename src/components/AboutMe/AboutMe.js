@@ -25,18 +25,18 @@ class AboutMe extends React.Component {
    */
   getInfos() {
     const itemList = [
-      {details: 'gonzaloterzano@gmail.com', iconClass: 'material-icons', iconName: 'email'},
-      {details: 'gonzadk.github.com', iconClass: 'material-icons', iconName: 'language'},
-      {details: 'gonzaloterzano@hotmail.com', iconClass: 'fa fa-skype', iconName: ''},
-      {details: '+549 264 464 9709', iconClass: 'material-icons', iconName: 'phone'},
-      {details: 'Córdoba, Argentina', iconClass: 'material-icons', iconName: 'place'}
+      {key: 'email', details: 'gonzaloterzano@gmail.com', iconClass: 'material-icons', iconName: 'email'},
+      {key: 'github', details: 'gonzadk.github.com', iconClass: 'material-icons', iconName: 'language'},
+      {key: 'skype', details: 'gonzaloterzano@hotmail.com', iconClass: 'fa fa-skype', iconName: ''},
+      {key: 'phone', details: '+549 264 464 9709', iconClass: 'material-icons', iconName: 'phone'},
+      {key: 'city', details: 'Córdoba, Argentina', iconClass: 'material-icons', iconName: 'place'}
     ];
     return (
       <div className="infos">
         <ul className="profile-list">
           {
             itemList.map(item => (
-                <li className="profile-list-item clearfix">
+                <li key={item.key}  className="profile-list-item clearfix">
                   <span className="title"><i className={item.iconClass}>{item.iconName}</i></span>
                   <span className="content">{item.details}</span>
                 </li>
@@ -50,15 +50,15 @@ class AboutMe extends React.Component {
 
   getLinks() {
     const links = [
-      {href: 'https://www.facebook.com/Gonza.Terzano', iconColor: 'indigo', iconClass: 'fa-facebook'},
-      {href: 'https://www.linkedin.com/in/gonzalo-terzano', iconColor: 'blue darken-3', iconClass: 'fa-linkedin'},
-      {href: 'https://www.github.com/gonzadk', iconColor: 'blue darken-3', iconClass: 'fa-github'}
+      {key: 'facebook', href: 'https://www.facebook.com/Gonza.Terzano', iconColor: 'indigo', iconClass: 'fa-facebook'},
+      {key: 'linkedin', href: 'https://www.linkedin.com/in/gonzalo-terzano', iconColor: 'blue darken-3', iconClass: 'fa-linkedin'},
+      {key: 'github', href: 'https://www.github.com/gonzadk', iconColor: 'blue darken-3', iconClass: 'fa-github'}
     ];
     return (
       <div className="links">
         {
           links.map(link => (
-            <a href={link.href} target="_blank" className={'social btn-floating ' + link.iconColor}>
+            <a key={link.key} href={link.href} target="_blank" className={'social btn-floating ' + link.iconColor}>
               <i className={'link-icon fa ' + link.iconClass}></i>
             </a>
             )

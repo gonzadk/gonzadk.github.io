@@ -1626,11 +1626,7 @@ canvas {
   position:absolute; 
   width: 100%; 
   height: 95%; 
-  /*background-color: #222f38; */
-  background-image: url(""); 
-  background-repeat: no-repeat; 
-  background-size: cover; 
-  background-position: 50% 50%; 
+  background: none;
 } 
 
 .particle-background {

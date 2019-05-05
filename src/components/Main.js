@@ -7,6 +7,7 @@ import React from 'react';
 import ScrollReveal from 'scrollreveal'
 import PreLoading from './PreLoading/PreLoading';
 import Description from './Description/Description';
+import Education from './Education/Education';
 // import LeftMenu from './LeftMenu/LeftMenu';
 import AboutMe from './AboutMe/AboutMe';
 
@@ -33,6 +34,7 @@ class AppComponent extends React.Component {
           <AboutMe/>
         </header>
         <Description/>
+        <Education/>
       </main>
     );
   }

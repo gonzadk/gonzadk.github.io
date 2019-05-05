@@ -1,12 +1,77 @@
-require('components/AboutMe/AboutMe.scss');
+require('./AboutMe.scss');
 
 import React from 'react';
+import ScrollReveal from 'scrollreveal'
 
 class AboutMe extends React.Component {
+  componentDidMount() {
+    ScrollReveal().reveal(this.refs.aboutMe, {duration: 1400, distance: '150px'});
+  }
+
+  /**
+   * Returns the heading info
+   */
+  getInfoHeadings() {
+    return (
+      <div className="info-headings">
+        <h4 className="profile-name text-uppercase left">Gonzalo Terzano</h4>
+        <h6 className="profile-details text-capitalize left">Sr Frontend Developer</h6>
+      </div>
+    );
+  }
+
+  /**
+   * Returns all the item to be displayed, like email or pages
+   */
+  getInfos() {
+    const itemList = [
+      {details: 'gonzaloterzano@gmail.com', iconClass: 'material-icons', iconName: 'email'},
+      {details: 'gonzadk.github.com', iconClass: 'material-icons', iconName: 'language'},
+      {details: 'gonzaloterzano@hotmail.com', iconClass: 'fa fa-skype', iconName: ''},
+      {details: '+549 264 464 9709', iconClass: 'material-icons', iconName: 'phone'},
+      {details: 'Córdoba, Argentina', iconClass: 'material-icons', iconName: 'place'}
+    ];
+    return (
+      <div className="infos">
+        <ul className="profile-list">
+          {
+            itemList.map(item => (
+                <li className="profile-list-item clearfix">
+                  <span className="title"><i className={item.iconClass}>{item.iconName}</i></span>
+                  <span className="content">{item.details}</span>
+                </li>
+              )
+            )
+          }
+        </ul>
+      </div>
+    );
+  }
+
+  getLinks() {
+    const links = [
+      {href: 'https://www.facebook.com/Gonza.Terzano', iconColor: 'indigo', iconClass: 'fa-facebook'},
+      {href: 'https://www.linkedin.com/in/gonzalo-terzano', iconColor: 'blue darken-3', iconClass: 'fa-linkedin'},
+      {href: 'https://www.github.com/gonzadk', iconColor: 'blue darken-3', iconClass: 'fa-github'}
+    ];
+    return (
+      <div className="links">
+        {
+          links.map(link => (
+            <a href={link.href} target="_blank" className={'social btn-floating ' + link.iconColor}>
+              <i className={'link-icon fa ' + link.iconClass}></i>
+            </a>
+            )
+          )
+        }
+      </div>
+    );
+  }
+
   render() {
     return (
       <div className="about-me section">
-        <div className="v-card-holder">
+        <div ref='aboutMe' className="v-card-holder">
           <div className="container">
             <div className="row">
               <div className="col-md-12 col-sm-12 col-xs-12">
@@ -20,48 +85,12 @@ class AboutMe extends React.Component {
 
                   <div className="card-content">
 
-                    <div className="info-headings">
-                      <h4 className="profile-name text-uppercase left">Gonzalo Terzano</h4>
-                      <h6 className="profile-details text-capitalize left">Sr Frontend Developer</h6>
-                    </div>
+                    {this.getInfoHeadings()}
 
-                    <div className="infos">
-                      <ul className="profile-list">
-                        <li className="profile-list-item clearfix">
-                          <span className="title"><i className="material-icons">email</i></span>
-                          <span className="content">gonzaloterzano@gmail.com</span>
-                        </li>
-                        <li className="profile-list-item clearfix">
-                          <span className="title"><i className="material-icons">language</i></span>
-                          <span className="content">gonzadk.github.com</span>
-                        </li>
-                        <li className="profile-list-item clearfix">
-                          <span className="title"><i className="fa fa-skype" aria-hidden="true"></i></span>
-                          <span className="content">gonzaloterzano@hotmail.com</span>
-                        </li>
-                        <li className="profile-list-item clearfix">
-                          <span className="title"><i className="material-icons">phone</i></span>
-                          <span className="content">+549 264 464 9709</span>
-                        </li>
-                        <li className="profile-list-item clearfix">
-                          <span className="title"><i className="material-icons">place</i></span>
-                          <span className="content">Córdoba, Argentina</span>
-                        </li>
+                    {this.getInfos()}
 
-                      </ul>
-                    </div>
+                    {this.getLinks()}
 
-                    <div className="links">
-                      <a href="https://www.facebook.com/Gonza.Terzano" target="_blank" id="first_one" className="social btn-floating indigo">
-                        <i className="link-icon fa fa-facebook"></i>
-                      </a>
-                      <a href="https://www.linkedin.com/in/gonzalo-terzano" target="_blank" className="social btn-floating blue darken-3">
-                          <i className="link-icon fa fa-linkedin"></i>
-                      </a>
-                      <a href="https://www.github.com/gonzadk" target="_blank" className="social btn-floating blue darken-3">
-                          <i className="link-icon fa fa-github"></i>
-                      </a>
-                    </div>
                   </div>
                 </div>
               </div>

@@ -1,4 +1,4 @@
-require('components/PreLoading/PreLoading.scss');
+require('./PreLoading.scss');
 
 import React from 'react';
 

@@ -1,0 +1,23 @@
+.description-container {
+  margin-top: 200px; 
+
+  .description-btn {
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    animation-delay: 1s;
+    text-align: center; 
+
+    .btn {
+      margin: 7px 7px;
+      background: #038175;
+      color: #ffffff;
+      width: 180px;
+      border-radius: 2px; 
+
+      &:hover {
+        background: #037267;
+      }
+    }
+  }
+}

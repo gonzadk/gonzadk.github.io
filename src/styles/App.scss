@@ -1,4 +1,23 @@
 /*******************/
+/*** BODY & HTML ***/
+/*******************/
+html, body {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  background-color: #f5f5f5;
+  color: #616161;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-text-stroke: 1px transparent;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+/*******************/
 /***   GENERAL   ***/
 /*******************/
 html,

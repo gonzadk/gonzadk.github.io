@@ -4,7 +4,9 @@ require('bootstrap/dist/css/bootstrap.min.css');
 require('styles/App.scss');
 
 import React from 'react';
+import ScrollReveal from 'scrollreveal'
 import PreLoading from './PreLoading/PreLoading';
+import Description from './Description/Description';
 // import LeftMenu from './LeftMenu/LeftMenu';
 import AboutMe from './AboutMe/AboutMe';
 
@@ -18,15 +20,20 @@ class AppComponent extends React.Component {
     setTimeout(() => {
       this.isLoading = false;
       this.forceUpdate();
+      //ScrollReveal().reveal('.generic-scroll-reveal', {duration: 1100});
     }, 1500);
+
   }
 
   getHeader() {
     return this.isLoading ? null : (
-      <header>
-        {/* <LeftMenu/> */}
-        <AboutMe/>
-      </header>
+      <main>
+        <header>
+          {/* <LeftMenu/> */}
+          <AboutMe/>
+        </header>
+        <Description/>
+      </main>
     );
   }
   

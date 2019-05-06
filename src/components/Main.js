@@ -4,13 +4,16 @@ require('bootstrap/dist/css/bootstrap.min.css');
 require('styles/App.scss');
 
 import React from 'react';
-// import ScrollReveal from 'scrollreveal'
-import PreLoading from './PreLoading/PreLoading';
+import ScrollReveal from 'scrollreveal'
+
+import AboutMe from './AboutMe/AboutMe';
 import Description from './Description/Description';
 import Education from './Education/Education';
+import Experience from './Experience/Experience';
 import HeaderParticles from './HeaderParticles/HeaderParticles';
-// import LeftMenu from './LeftMenu/LeftMenu';
-import AboutMe from './AboutMe/AboutMe';
+import LeftMenu from './LeftMenu/LeftMenu';
+import PreLoading from './PreLoading/PreLoading';
+import Skills from './Skills/Skills';
 
 // let yeomanImage = require('../images/yeoman.png');
 // <img src={yeomanImage} alt="Yeoman Generator" />
@@ -18,24 +21,29 @@ import AboutMe from './AboutMe/AboutMe';
 class AppComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.isLoading = true;
+
+    this.state = { isLoading: true };
     setTimeout(() => {
-      this.isLoading = false;
-      this.forceUpdate();
-      //ScrollReveal().reveal('.generic-scroll-reveal', {duration: 1100});
+      this.setState(() => ({ isLoading: false }));
+      const scrollreveal = ScrollReveal();
+      scrollreveal.reveal('.generic-scroll-reveal', {duration: 1100});
+      scrollreveal.reveal('.about-me-container', {duration: 1400, distance: '150px'});
+      scrollreveal.reveal('.skillbar-bar', {duration: 1800, delay: 300, distance: '0'});
     }, 1500);
 
   }
 
   getHeader() {
-    return this.isLoading ? null : (
+    return this.state.isLoading ? null : (
       <section>
+        <LeftMenu/>
         <header>
           <HeaderParticles/>
-          {/* <LeftMenu/> */}
           <AboutMe/>
         </header>
         <Description/>
+        <Experience/>
+        <Skills/>
         <Education/>
       </section>
     );
@@ -44,7 +52,7 @@ class AppComponent extends React.Component {
   render() {
     return (
       <section>
-          <PreLoading isLoading={this.isLoading}/>
+          <PreLoading isLoading={this.state.isLoading}/>
           {this.getHeader()}
       </section>
     );

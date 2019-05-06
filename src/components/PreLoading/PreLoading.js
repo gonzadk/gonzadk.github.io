@@ -4,10 +4,8 @@ import React from 'react';
 
 class PreLoading extends React.Component {
   render() {
-    const loadingClass = this.props.isLoading ? '' : 'is-hidden';
-
     return (
-    <section className={`pre-loading ${loadingClass}`}>
+    <section className={`pre-loading ${this.props.isLoading ? '' : 'is-hidden'}`}>
       <section className="loading-center">
         <div className="loading-center-absolute">
           <div className="box-holder animated bounceInDown">

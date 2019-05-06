@@ -1,0 +1,66 @@
+.skills-container {
+  .card {
+    background: #038175;
+
+    .skills-title {
+      margin: 15px 0; 
+
+      h6 {
+        color: #fff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.29); 
+      }
+    }
+  }
+
+  .skillbar {
+    position: relative;
+    display: block;
+    margin-bottom: 17px;
+    margin-top: 45px;
+    width: 100%;
+    padding: 0 0;
+    background: #037267;
+    height: 4px;
+
+    .skillbar-title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 1em; 
+
+      span {
+        display: block;
+        padding: 3px 0;
+        margin-top: -25px;
+        line-height: 15px;
+        color: #fff; 
+      }
+    }
+
+    .skillbar-bar {
+      height: 4px;
+      width: 0;
+      background: #fff;
+      overflow: hidden; 
+      -webkit-transition: 0.4s linear;
+      -moz-transition: 0.4s linear;
+      -ms-transition: 0.4s linear;
+      -o-transition: 0.4s linear;
+      transition: 0.4s linear;
+      -webkit-transition-property: width, background-color;
+      -moz-transition-property: width, background-color;
+      -ms-transition-property: width, background-color;
+      -o-transition-property: width, background-color;
+      transition-property: width, background-color; 
+    }
+
+    .skill-bar-percent {
+      position: absolute;
+      right: 1px;
+      top: -20px;
+      font-size: .8em;
+      line-height: 15px;
+      color: #fff; 
+    }
+  }
+}

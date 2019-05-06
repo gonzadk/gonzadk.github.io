@@ -1,13 +1,8 @@
 require('./AboutMe.scss');
 
 import React from 'react';
-import ScrollReveal from 'scrollreveal'
 
 class AboutMe extends React.Component {
-  componentDidMount() {
-    ScrollReveal().reveal(this.refs.aboutMe, {duration: 1400, distance: '150px'});
-  }
-
   /**
    * Returns the heading info
    */
@@ -70,8 +65,8 @@ class AboutMe extends React.Component {
 
   render() {
     return (
-      <div className="about-me section">
-        <div ref='aboutMe' className="v-card-holder">
+      <div id="home" className="about-me-container section">
+        <div className="v-card-holder">
           <div className="container">
             <div className="row">
               <div className="col-md-12 col-sm-12 col-xs-12">

@@ -7,7 +7,7 @@ class Description extends React.Component {
     'Córdoba. I enjoy working on extensive teams and sharing my knowledge in order to ' +
     'help other people to achieve professional success. I am currently focused on ' +
     'improving my leadership skills and I am also an amateur basketball player.';
-  delay = 25;
+  delay = 5;
 
   componentDidMount() {
     this.autoWrite(this.presentation);
@@ -26,7 +26,7 @@ class Description extends React.Component {
 
   render() {
     return (
-      <div className="description-container section">
+      <div id="description" className="generic-scroll-reveal description-container section">
         <div className="container">
           <div className="row">
             <div className="col-md-12">

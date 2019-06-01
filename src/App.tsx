@@ -14,6 +14,7 @@ import HeaderParticles from './components/HeaderParticles/HeaderParticles';
 import LeftMenu from './components/LeftMenu/LeftMenu';
 import PreLoading from './components/PreLoading/PreLoading';
 import Skills from './components/Skills/Skills';
+import Interest from './components/Interest/Interest';
 
 const REVEAL_TIMEOUT = 1500;
 type AppProps = {};
@@ -47,6 +48,7 @@ class AppComponent extends React.Component<AppProps, AppState> {
         <Experience/>
         <Skills/>
         <Education/>
+        <Interest/>
       </section>
     );
   }

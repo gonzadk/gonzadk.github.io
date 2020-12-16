@@ -2,8 +2,6 @@ import './left-menu.scss';
 
 import React, { FunctionComponent, useState } from 'react';
 
-const SHOW_MENU = false;
-
 export const LeftMenu: FunctionComponent = () => {
   const [showMenu, setShowMenu] = useState(false);
 

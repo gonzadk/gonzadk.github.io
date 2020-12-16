@@ -1,16 +1,48 @@
 import React, { FunctionComponent } from 'react';
 
-import { TimelineItem, TimelineList } from '@components/timeline-list/timeline-list';
+import { TimelineList } from 'components/timeline-list/timeline-list';
+import { TimelineItem } from 'components/timeline-list/timeline-list.types';
 
 import './experience.scss';
 
 const TIMELINE_ITEMS: TimelineItem[] = [
   {
+    mainLetter: 'R',
+    title: 'Raftr',
+    titleSmall: true,
+    subtitle: 'Frontend Developer',
+    timeline: 'Apr 2020 - Present..',
+    description:
+      'Working as a Frontend Developer on this great startup focused on connect universities and colleges with students. Working with React and NextJs',
+  },
+  {
+    mainLetter: '24',
+    title: '24 Hour Fitness',
+    titleSmall: true,
+    subtitle: 'Software Engineer',
+    timeline: 'Oct 2019 - Apr 2020',
+    description:
+      'I was in charge of rewriting a front-end project that allow clients ' +
+      'to purchase memberships and add different ancillary products. Working with ' +
+      'angular 9 and ngxs',
+  },
+  {
+    mainLetter: 'T',
+    title: 'Thirdlove',
+    titleSmall: true,
+    subtitle: 'Full Stack Engineer',
+    timeline: 'Jun 2019 - Sep 2019',
+    description:
+      'I worked at Thirdlove redesigning one of the company’s insignia ' +
+      'app called FitFinder, that helps woman finding their best bra. We were developing a ' +
+      'standalone application that runs with ReactJs and NodeJs',
+  },
+  {
     mainLetter: 'M',
     title: 'McAfee',
     titleSmall: true,
     subtitle: 'Software Development Engineer',
-    timeline: 'Feb 2017 - Present..',
+    timeline: 'Feb 2017 - May 2019',
     description:
       'Fullstack developer responsible for end-to-end app development. ' +
       'Leading three teams of 5-6 people each. Working also on an inner source ' +

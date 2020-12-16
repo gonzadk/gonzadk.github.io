@@ -1,7 +1,7 @@
 import './contact.scss';
 
 import React, { FunctionComponent } from 'react';
-import MapContainerWrapper from '@components/map/map';
+import { MapContainerWrapper } from 'components/map/map';
 
 export const Contact: FunctionComponent = () => {
   return (

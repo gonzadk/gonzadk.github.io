@@ -22,6 +22,7 @@ const MapContainer: FunctionComponent<MapContainerProps> = (props: MapContainerP
   const { google } = props;
 
   return (
+    // @ts-ignore
     <Map
       google={google}
       className="map-container"

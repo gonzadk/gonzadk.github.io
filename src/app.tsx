@@ -1,21 +1,21 @@
 import 'materialize-css/dist/css/materialize.css';
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.scss';
+import './app.scss';
 
 import React from 'react';
 import ScrollReveal from 'scrollreveal';
 
-import { AboutMe } from '@components/about-me/about-me';
-import { Description } from '@components/description/description';
-import { HeaderParticles } from '@components/header-particles/header-particles';
-import { LeftMenu } from '@components/left-menu/left-menu';
-import { PreLoading } from '@components/pre-loading/pre-loading';
-import { Skills } from '@components/skills/skills';
-import { Interest } from '@components/interest/interest';
-import { Contact } from '@components/contact/contact';
-import { Experience } from '@components/experience/experience';
-import { Education } from '@components/education/education';
+import { AboutMe } from 'components/about-me/about-me';
+import { Description } from 'components/description/description';
+import { HeaderParticles } from 'components/header-particles/header-particles';
+import { LeftMenu } from 'components/left-menu/left-menu';
+import { PreLoading } from 'components/pre-loading/pre-loading';
+import { Skills } from 'components/skills/skills';
+import { Interest } from 'components/interest/interest';
+import { Contact } from 'components/contact/contact';
+import { Experience } from 'components/experience/experience';
+import { Education } from 'components/education/education';
 
 const REVEAL_TIMEOUT = 1500;
 
@@ -37,7 +37,7 @@ class AppComponent extends React.Component<{}, AppState> {
     }, REVEAL_TIMEOUT);
   }
 
-  getHeader() {
+  getPageContent() {
     return this.state.isLoading ? null : (
       <section>
         <LeftMenu />
@@ -59,7 +59,7 @@ class AppComponent extends React.Component<{}, AppState> {
     return (
       <section>
         <PreLoading isLoading={this.state.isLoading} />
-        {this.getHeader()}
+        {this.getPageContent()}
       </section>
     );
   }

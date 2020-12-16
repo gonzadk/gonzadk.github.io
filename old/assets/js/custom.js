@@ -2,7 +2,7 @@
     "use strict";
 
     const presentation = {
-        english: "I'm a 29 years old Sr Frontend Developer from Argentina and currently based in " + 
+        english: "I'm a 29 years old Sr Frontend Developer from Argentina and currently based in " +
                  "Córdoba. I enjoy working on extensive teams and sharing my knowledge in order to " +
                  "help other people to achieve professional success. I am currently focused on " +
                  "improving my leadership skills and I am also an amateur basketball player.",
@@ -219,7 +219,7 @@
             e.preventDefault(); //Prevents default submit
             var form = $(this);
             $("#submit").attr('disabled', 'disabled'); //Disable the submit button on click
-            var post_data = form.serialize(); //Serialized the form data 
+            var post_data = form.serialize(); //Serialized the form data
             $('div#form-loader').removeClass('is-hidden').fadeIn(500);
             $.ajax({
                 url: 'https://formspree.io/gonzaloterzano@gmail.com', // Form script
@@ -251,11 +251,11 @@
                 $(querySelector).html($(querySelector).html() + text[0]);
 
                 var newText = text.slice(1);
-                autoWrite(querySelector, newText); 
+                autoWrite(querySelector, newText);
             }, presentation.delay)
         } else return;
     }
-    
+
     particlesJS("particles-js", particlesConfig);
 
     jQuery(window).load(function () {

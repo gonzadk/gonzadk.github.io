@@ -1,7 +1,9 @@
-import './education.scss';
-
 import React, { FunctionComponent } from 'react';
-import { TimelineItem, TimelineList } from '../timeline-list/timeline-list';
+
+import {  TimelineList } from 'components/timeline-list/timeline-list';
+import { TimelineItem } from 'components/timeline-list/timeline-list.types';
+
+import './education.scss';
 
 const TIMELINE_LIST: TimelineItem[] = [
   {

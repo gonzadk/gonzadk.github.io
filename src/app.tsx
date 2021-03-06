@@ -6,16 +6,15 @@ import './app.scss';
 import React from 'react';
 import ScrollReveal from 'scrollreveal';
 
-import { AboutMe } from 'components/about-me/about-me';
-import { Description } from 'components/description/description';
-import { HeaderParticles } from 'components/header-particles/header-particles';
-import { LeftMenu } from 'components/left-menu/left-menu';
-import { PreLoading } from 'components/pre-loading/pre-loading';
-import { Skills } from 'components/skills/skills';
-import { Interest } from 'components/interest/interest';
-import { Contact } from 'components/contact/contact';
-import { Experience } from 'components/experience/experience';
-import { Education } from 'components/education/education';
+import { AboutMe } from 'components/about-me/about-me.component';
+import { Description } from 'components/description/description.component';
+import { HeaderParticles } from 'components/header-particles/header-particles.component';
+import { PreLoading } from 'components/pre-loading/pre-loading.component';
+import { Skills } from 'components/skills/skills.component';
+import { Interest } from 'components/interest/interest.component';
+import { Location } from 'components/location/location.component';
+import { Experience } from 'components/experience/experience.component';
+import { Education } from 'components/education/education.component';
 
 const REVEAL_TIMEOUT = 1500;
 
@@ -40,7 +39,6 @@ class AppComponent extends React.Component<{}, AppState> {
   getPageContent() {
     return this.state.isLoading ? null : (
       <section>
-        <LeftMenu />
         <header>
           <HeaderParticles />
           <AboutMe />
@@ -50,7 +48,7 @@ class AppComponent extends React.Component<{}, AppState> {
         <Skills />
         <Education />
         <Interest />
-        <Contact />
+        <Location />
       </section>
     );
   }

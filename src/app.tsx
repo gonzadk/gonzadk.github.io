@@ -6,15 +6,15 @@ import './app.scss';
 import React from 'react';
 import ScrollReveal from 'scrollreveal';
 
-import { AboutMe } from '@components/about-me/about-me.component';
-import { Description } from '@components/description/description.component';
-import { HeaderParticles } from '@components/header-particles/header-particles.component';
-import { PreLoading } from '@components/pre-loading/pre-loading.component';
-import { Skills } from '@components/skills/skills.component';
-import { Interest } from '@components/interest/interest.component';
-import { Location } from '@components/location/location.component';
-import { Experience } from '@components/experience/experience.component';
-import { Education } from '@components/education/education.component';
+import { AboutMe } from 'components/about-me/about-me.component';
+import { Description } from 'components/description/description.component';
+import { HeaderParticles } from 'components/header-particles/header-particles.component';
+import { PreLoading } from 'components/pre-loading/pre-loading.component';
+import { Skills } from 'components/skills/skills.component';
+import { Interest } from 'components/interest/interest.component';
+import { Location } from 'components/location/location.component';
+import { Experience } from 'components/experience/experience.component';
+import { Education } from 'components/education/education.component';
 
 const REVEAL_TIMEOUT = 1500;
 

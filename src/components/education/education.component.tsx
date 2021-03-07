@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from 'react';
 
-import { TimelineList } from '@components/timeline-list/timeline-list.component';
-import { TimelineItem } from '@components/timeline-list/timeline-list.component.types';
-import { Card } from '@shared-components/card/card.component';
+import { TimelineList } from 'components/timeline-list/timeline-list.component';
+import { TimelineItem } from 'components/timeline-list/timeline-list.component.types';
+import { Card } from 'shared-components/card/card.component';
 
 import './education.component.scss';
 

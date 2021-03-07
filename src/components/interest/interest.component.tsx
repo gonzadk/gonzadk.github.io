@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 
-import { Card } from '@shared-components/card/card.component';
+import { Card } from 'shared-components/card/card.component';
 
 import './interest.component.scss';
 import { InterestIcon } from './interest.component.types';

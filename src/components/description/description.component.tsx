@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 
-import { Card } from '@shared-components/card/card.component';
+import { Card } from 'shared-components/card/card.component';
 
 import './description.component.scss';
 

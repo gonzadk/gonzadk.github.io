@@ -20,9 +20,18 @@
   &__items-container {
     border-radius: 0 0 10px 10px;
     border-top: 1px solid rgba(160, 160, 160, 0.2);
-    display: flex;
+    display: grid;
     flex-direction: row;
     overflow: hidden;
+    grid-template-columns: 50% 50%;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 33.3% 33.3% 33.3%;
+    }
+
+    @media (min-width: 992px) {
+      display: flex;
+    }
   }
 
   &__item {

@@ -20,7 +20,6 @@ const MapContainer: FunctionComponent<MapContainerProps> = (props: MapContainerP
   const { google } = props;
 
   return (
-    // @ts-ignore
     <Map
       google={google}
       style={MAP_STYLE}
@@ -38,5 +37,4 @@ const MapContainer: FunctionComponent<MapContainerProps> = (props: MapContainerP
 
 export const MapContainerWrapper = GoogleApiWrapper({
   apiKey: 'AIzaSyDARz9JFuLcbY5GiOnA6vrmpuf9N39A8i8',
-  // @ts-ignore
 })(MapContainer);

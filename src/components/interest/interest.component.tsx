@@ -36,11 +36,11 @@ export const Interest: FunctionComponent = () => {
       <Card className="interest">
         <p className="interest__description">{description}</p>
 
-        <div className="interest__items-container no-gutters">
+        <section className="interest__items-container">
           {interestIcons.map((item: InterestIcon, index: number) => (
             <InterestIcon item={item} key={index} />
           ))}
-        </div>
+        </section>
       </Card>
     </section>
   );

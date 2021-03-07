@@ -104,11 +104,11 @@ export const AboutMe: FunctionComponent = () => {
             ))}
           </ul>
 
-          <div className="links">
+          <section className="links">
             {LINKS.map((link) => (
               <Link link={link} key={link.key} />
             ))}
-          </div>
+          </section>
         </section>
       </section>
     </Card>

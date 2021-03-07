@@ -7,6 +7,10 @@
   top: 171px;
   width: 100%;
 
+  @media (max-width: 767px) {
+    overflow: visible;
+  }
+
   &__container {
     background-color: transparent !important;
     height: 370px;
@@ -57,7 +61,10 @@
   }
 
   &__profile-info {
+    display: flex;
+    flex-direction: column;
     padding: 10px;
+    width: 100%;
 
     @media (min-width: 767px) {
       padding: 40px;
@@ -74,7 +81,6 @@
       }
 
       @media screen and (max-width: 767px) {
-        display: table;
         max-width: 100%;
         padding: 0;
         margin: 0 auto 9px;
@@ -107,14 +113,7 @@
   }
 
   &__profile-header {
-    max-width: 514px;
-
-    @media screen and (max-width: 990px) {
-      max-width: 270px;
-    }
-
     @media screen and (max-width: 767px) {
-      max-width: 100%;
       text-align: center;
       margin-top: 38px;
     }
@@ -146,17 +145,9 @@
   &__profile-items-container {
     display: flex;
     flex-direction: column;
-    max-width: 515px;
-
-    @media screen and (max-width: 990px) {
-      max-width: 278px;
-    }
 
     @media screen and (max-width: 767px) {
-      display: table;
       margin: 0 auto;
-      max-width: 100%;
-      padding: 0;
     }
   }
 

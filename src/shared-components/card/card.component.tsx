@@ -5,7 +5,15 @@ import './card.component.scss';
 import { CardProps } from './card.component.types';
 
 export const Card: FunctionComponent<CardProps> = (props: CardProps) => {
-  const { children, className } = props;
+  const { children, className, transparent } = props;
 
-  return <section className={classNames('card-generic', className)}>{children}</section>;
+  return (
+    <section
+      className={classNames('card-generic', className, {
+        'card-generic--transparent': transparent,
+      })}
+    >
+      {children}
+    </section>
+  );
 };

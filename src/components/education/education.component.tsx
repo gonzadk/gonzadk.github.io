@@ -1,7 +1,8 @@
 import React, { FunctionComponent } from 'react';
 
-import {  TimelineList } from 'components/timeline-list/timeline-list.component';
+import { TimelineList } from 'components/timeline-list/timeline-list.component';
 import { TimelineItem } from 'components/timeline-list/timeline-list.component.types';
+import { Card } from '../../shared-components/card/card.component';
 
 import './education.component.scss';
 
@@ -27,19 +28,17 @@ const TIMELINE_LIST: TimelineItem[] = [
 
 export const Education: FunctionComponent = () => {
   return (
-    <section id="education" className="generic-scroll-reveal section education-container">
-      <div className="container">
-        <div className="section-title">
-          <h4 className="text-uppercase text-center">
-            <i className="title-icon fa fa-graduation-cap" />
-            Education
-          </h4>
-        </div>
+    <Card className="education generic-scroll-reveal" transparent>
+      <section className="education__title">
+        <h4 className="text-uppercase text-center">
+          <i className="title-icon fa fa-graduation-cap" />
+          Education
+        </h4>
+      </section>
 
-        <div className="timeline-education">
-          <TimelineList list={TIMELINE_LIST} />
-        </div>
+      <div className="education__timeline">
+        <TimelineList list={TIMELINE_LIST} />
       </div>
-    </section>
+    </Card>
   );
 };

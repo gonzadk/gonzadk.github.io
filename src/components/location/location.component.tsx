@@ -7,7 +7,7 @@ import { Card } from '../../shared-components/card/card.component';
 
 export const Location: FunctionComponent = () => {
   return (
-    <Card className="location generic-scroll-reveal">
+    <Card className="location generic-scroll-reveal" transparent>
       <section className="location__title">
         <i className="title-icon fa fa-location-arrow" />
         Location

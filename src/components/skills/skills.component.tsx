@@ -17,18 +17,18 @@ const SKILL_COLUMNS: SkillColumn[] = [
   {
     titleInSmall: 'Professional',
     skills: [
-      { name: 'JavaScript', percent: '90%' },
+      { name: 'React', percent: '90%' },
+      { name: 'TypeScript', percent: '90%' },
       { name: 'Angular', percent: '90%' },
       { name: 'AngularJs', percent: '90%' },
-      { name: 'React', percent: '30%' },
     ],
   },
   {
     skills: [
-      { name: 'HTML5/CSS3', percent: '80%' },
-      { name: 'GulpJS', percent: '30%' },
-      { name: 'Java', percent: '40%' },
-      { name: 'NodeJS', percent: '25%' },
+      { name: 'HTML5/CSS3', percent: '90%' },
+      { name: 'CD/CI', percent: '50%' },
+      { name: 'Java', percent: '35%' },
+      { name: 'NodeJS', percent: '35%' },
     ],
   },
   {
@@ -46,7 +46,7 @@ export const Skills: FunctionComponent = () => {
   const SkillColumn = ({ skillsColumn }: { skillsColumn: SkillColumn }) => (
     <div className="col-md-4 col-sm-4 col-xs-12">
       {!skillsColumn.titleInSmall ? null : (
-        <div className="skills-title visible-xs">
+        <div className="skills__section-title visible-xs">
           <h6 className="text-center">{skillsColumn.titleInSmall}</h6>
         </div>
       )}
@@ -66,34 +66,32 @@ export const Skills: FunctionComponent = () => {
 
   return (
     <section className="generic-scroll-reveal skills__container">
-      <div className="container">
-        <section className="skills__title">
-          <i className="title-icon fa fa-sliders" />
-          Skills
-        </section>
+      <section className="skills__title">
+        <i className="title-icon fa fa-sliders" />
+        Skills
+      </section>
 
-        <Card className="skills">
-          <div className="row">
-            <div className="row hidden-xs">
-              <div className="col-md-8 col-sm-8">
-                <div className="skills__section-title">
-                  <h6 className="text-center">Professional</h6>
-                </div>
-              </div>
-
-              <div className="col-md-4 col-sm-4">
-                <div className="skills__section-title">
-                  <h6 className="text-center">Personal</h6>
-                </div>
+      <Card className="skills">
+        <section className="row">
+          <div className="row hidden-xs">
+            <div className="col-md-8 col-sm-8">
+              <div className="skills__section-title">
+                <h6 className="text-center">Professional</h6>
               </div>
             </div>
 
-            {SKILL_COLUMNS.map((skillsColumn, index) => (
-              <SkillColumn skillsColumn={skillsColumn} key={`column-${index}`} />
-            ))}
+            <div className="col-md-4 col-sm-4">
+              <div className="skills__section-title">
+                <h6 className="text-center">Personal</h6>
+              </div>
+            </div>
           </div>
-        </Card>
-      </div>
+
+          {SKILL_COLUMNS.map((skillsColumn, index) => (
+            <SkillColumn skillsColumn={skillsColumn} key={`column-${index}`} />
+          ))}
+        </section>
+      </Card>
     </section>
   );
 };

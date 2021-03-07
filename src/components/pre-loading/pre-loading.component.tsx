@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import React, { FunctionComponent } from 'react';
 
 import './pre-loading.component.scss';
@@ -7,7 +8,11 @@ export const PreLoading: FunctionComponent<PreLoadingProps> = (props: PreLoading
   const { isLoading } = props;
 
   return (
-    <section className={`pre-loading ${isLoading ? '' : 'is-hidden'}`}>
+    <section
+      className={classNames('pre-loading', {
+        'pre-loading--hidden': !isLoading,
+      })}
+    >
       <section className="loading-center">
         <div className="loading-center-absolute">
           <div className="box-holder animated bounceInDown">

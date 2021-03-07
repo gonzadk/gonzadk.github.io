@@ -4,6 +4,7 @@ import { TimelineList } from 'components/timeline-list/timeline-list.component';
 import { TimelineItem } from 'components/timeline-list/timeline-list.component.types';
 
 import './experience.component.scss';
+import { Card } from '../../shared-components/card/card.component';
 
 const TIMELINE_ITEMS: TimelineItem[] = [
   {
@@ -82,19 +83,15 @@ const TIMELINE_ITEMS: TimelineItem[] = [
 
 export const Experience: FunctionComponent = () => {
   return (
-    <section id="experience" className="generic-scroll-reveal section experience-container">
-      <div className="container">
-        <div className="section-title">
-          <h4 className="text-uppercase text-center">
-            <i className="title-icon fa fa-suitcase" />
-            Experience
-          </h4>
-        </div>
+    <Card className="experience generic-scroll-reveal" transparent>
+      <section className="experience__title">
+        <i className="title-icon fa fa-suitcase" />
+        Experience
+      </section>
 
-        <div className="timeline-experience">
-          <TimelineList list={TIMELINE_ITEMS} />
-        </div>
+      <div className="experience__timeline">
+        <TimelineList list={TIMELINE_ITEMS} />
       </div>
-    </section>
+    </Card>
   );
 };

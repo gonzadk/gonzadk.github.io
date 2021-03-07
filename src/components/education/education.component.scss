@@ -1,0 +1,38 @@
+.education {
+  &__title {
+    font-size: 34px;
+    font-weight: 600;
+    margin: 30px 0 20px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+
+    i {
+      margin-right: 20px;
+    }
+  }
+
+  &__timeline {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 23px;
+      left: 60%;
+      height: 50%;
+      width: 4px;
+      opacity: 0.3;
+      background: #038175;
+
+      @media only screen and (min-width: 768px) {
+        left: 50%;
+        margin-left: -2px;
+        height: 50%;
+        opacity: 0.4;
+        background: #038175;
+      }
+    }
+  }
+}

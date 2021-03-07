@@ -1,7 +1,8 @@
 import React, { FunctionComponent } from 'react';
 
+import { Card } from '@shared-components/card/card.component';
+
 import './about-me.component.scss';
-import { Card } from '../../shared-components/card/card.component';
 
 const LINKS = [
   {

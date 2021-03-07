@@ -1,8 +1,9 @@
 import React, { FunctionComponent } from 'react';
 
+import { Card } from '@shared-components/card/card.component';
+
 import './interest.component.scss';
 import { InterestIcon } from './interest.component.types';
-import { Card } from '../../shared-components/card/card.component';
 
 const description: string =
   'I enjoy watching sports and I love play basketball. Also, I love watching' +

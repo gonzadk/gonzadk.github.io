@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from 'react';
 
-import { MapContainerWrapper } from 'components/map/map.component';
+import { MapContainerWrapper } from '@components/map/map.component';
+import { Card } from '@shared-components/card/card.component';
 
 import './location.component.scss';
-import { Card } from '../../shared-components/card/card.component';
 
 export const Location: FunctionComponent = () => {
   return (

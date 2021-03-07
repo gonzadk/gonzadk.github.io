@@ -1,5 +1,5 @@
-import { GoogleApiWrapper, Map, Marker } from 'google-maps-react';
 import React, { CSSProperties, FunctionComponent } from 'react';
+import { GoogleApiWrapper, Map, Marker } from 'google-maps-react';
 
 import { MapContainerProps } from './map.component.types';
 

@@ -1,7 +1,8 @@
 import React, { FunctionComponent } from 'react';
 
+import { Card } from '@shared-components/card/card.component';
+
 import './skills.component.scss';
-import { Card } from '../../shared-components/card/card.component';
 
 type Skill = {
   name: string;

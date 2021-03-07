@@ -1,5 +1,5 @@
-import classNames from 'classnames';
 import React, { FunctionComponent } from 'react';
+import classNames from 'classnames';
 
 import './pre-loading.component.scss';
 import { PreLoadingProps } from './pre-loading.component.types';

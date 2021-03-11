@@ -14,7 +14,7 @@ const TIMELINE_ITEMS: TimelineItem[] = [
     subtitle: 'Frontend Developer',
     timeline: 'Apr 2020 - Present..',
     description:
-      'Working as a Frontend Developer on this great startup focused on connect universities and colleges with students. Working with React and NextJs',
+      'Working as a Frontend Developer on this great startup focused on connect universities and colleges with students. Tech stack: React and NextJs',
   },
   {
     mainLetter: '24',
@@ -24,8 +24,8 @@ const TIMELINE_ITEMS: TimelineItem[] = [
     timeline: 'Oct 2019 - Apr 2020',
     description:
       'I was in charge of rewriting a front-end project that allow clients ' +
-      'to purchase memberships and add different ancillary products. Working with ' +
-      'angular 9 and ngxs',
+      'to purchase memberships and add different ancillary products. ' +
+      'Tech stack: Angular 9 and NGXS',
   },
   {
     mainLetter: 'T',

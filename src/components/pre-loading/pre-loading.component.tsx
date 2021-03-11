@@ -22,7 +22,7 @@ export const PreLoading: FunctionComponent<PreLoadingProps> = (props: PreLoading
           </div>
           <div className="text-holder text-center">
             <h2 className="name">GONZALO TERZANO</h2>
-            <h6 className="details">Sr Frontend Developer</h6>
+            <h6 className="details">Sr Fullstack Developer</h6>
           </div>
         </div>
       </section>

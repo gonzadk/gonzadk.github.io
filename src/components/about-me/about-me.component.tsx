@@ -96,7 +96,7 @@ export const AboutMe: FunctionComponent = () => {
         <section className="about-me__profile-info">
           <div className="about-me__profile-header">
             <h4 className="about-me__profile-name">Gonzalo Terzano</h4>
-            <h6 className="about-me__profile-details">Sr Frontend Developer</h6>
+            <h6 className="about-me__profile-details">Sr Fullstack Developer (Frontend Focus)</h6>
           </div>
 
           <ul className="about-me__profile-items-container">

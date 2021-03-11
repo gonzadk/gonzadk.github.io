@@ -2,7 +2,7 @@
   "name": "resume-terzano-gonzalo",
   "version": "1.0.0",
   "homepage": "https://gonzadk.github.io/gonzadk.github.io",
-  "private": true,
+  "private": false,
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

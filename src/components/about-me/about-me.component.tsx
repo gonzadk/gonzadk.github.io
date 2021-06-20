@@ -1,64 +1,13 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useContext } from 'react';
 
 import { Card } from 'shared-components/card/card.component';
 
 import './about-me.component.scss';
-
-const LINKS = [
-  {
-    key: 'facebook',
-    href: 'https://www.facebook.com/Gonza.Terzano',
-    iconColor: 'indigo',
-    iconClass: 'fa-facebook',
-  },
-  {
-    key: 'linkedIn',
-    href: 'https://www.linkedin.com/in/gonzalo-terzano',
-    iconColor: 'blue darken-3',
-    iconClass: 'fa-linkedin',
-  },
-  {
-    key: 'github',
-    href: 'https://www.github.com/gonzadk',
-    iconColor: 'blue darken-3',
-    iconClass: 'fa-github',
-  },
-];
-
-const PROFILE_INFO_ITEMS = [
-  {
-    key: 'email',
-    details: 'gonzaloterzano@gmail.com',
-    iconClass: 'material-icons',
-    iconName: 'email',
-  },
-  {
-    key: 'github',
-    details: 'gonzadk.github.com',
-    iconClass: 'material-icons',
-    iconName: 'language',
-  },
-  {
-    key: 'skype',
-    details: 'gonzaloterzano@hotmail.com',
-    iconClass: 'fa fa-skype',
-    iconName: '',
-  },
-  {
-    key: 'phone',
-    details: '+549 264 464 9709',
-    iconClass: 'material-icons',
-    iconName: 'phone',
-  },
-  {
-    key: 'city',
-    details: 'Córdoba, Argentina',
-    iconClass: 'material-icons',
-    iconName: 'place',
-  },
-];
+import { ResumeContext } from '../../contexts/resume/resume.context';
 
 export const AboutMe: FunctionComponent = () => {
+  const resumeContext = useContext(ResumeContext);
+
   /**
    * Returns all the item to be displayed, like email or pages
    */
@@ -94,19 +43,19 @@ export const AboutMe: FunctionComponent = () => {
         </section>
 
         <section className="about-me__profile-info">
-          <div className="about-me__profile-header">
+          <section className="about-me__profile-header">
             <h4 className="about-me__profile-name">Gonzalo Terzano</h4>
             <h6 className="about-me__profile-details">Sr Fullstack Developer (Frontend Focus)</h6>
-          </div>
+          </section>
 
           <ul className="about-me__profile-items-container">
-            {PROFILE_INFO_ITEMS.map((item) => (
+            {resumeContext.aboutMeDetails.map((item) => (
               <ProfileInfoItem item={item} key={item.key} />
             ))}
           </ul>
 
           <section className="links">
-            {LINKS.map((link) => (
+            {resumeContext.aboutMeLinks.map((link) => (
               <Link link={link} key={link.key} />
             ))}
           </section>

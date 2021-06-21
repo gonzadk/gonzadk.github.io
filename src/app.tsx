@@ -15,6 +15,7 @@ import { Interest } from 'components/interest/interest.component';
 import { Location } from 'components/location/location.component';
 import { Experience } from 'components/experience/experience.component';
 import { Education } from 'components/education/education.component';
+import { ResumeContextProvider } from 'contexts/resume/resume.context';
 
 const REVEAL_TIMEOUT = 1500;
 
@@ -36,28 +37,29 @@ class AppComponent extends React.Component<{}, AppState> {
     }, REVEAL_TIMEOUT);
   }
 
-  getPageContent() {
-    return this.state.isLoading ? null : (
-      <section>
-        <header>
-          <HeaderParticles />
-          <AboutMe />
-        </header>
-        <Description />
-        <Experience />
-        <Skills />
-        <Education />
-        <Interest />
-        <Location />
-      </section>
-    );
-  }
-
   render() {
+    const { isLoading } = this.state;
+
     return (
       <section>
-        <PreLoading isLoading={this.state.isLoading} />
-        {this.getPageContent()}
+        <PreLoading isLoading={isLoading} />
+
+        {!isLoading && (
+          <ResumeContextProvider>
+            <section>
+              <header>
+                <HeaderParticles />
+                <AboutMe />
+              </header>
+              <Description />
+              <Experience />
+              <Skills />
+              <Education />
+              <Interest />
+              <Location />
+            </section>
+          </ResumeContextProvider>
+        )}
       </section>
     );
   }

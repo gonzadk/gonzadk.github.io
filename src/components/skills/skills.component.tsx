@@ -1,49 +1,14 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useContext } from 'react';
 
+import { ResumeContext } from 'contexts/resume/resume.context';
+import { SkillColumn } from 'contexts/resume/resume.types';
 import { Card } from 'shared-components/card/card.component';
 
 import './skills.component.scss';
 
-type Skill = {
-  name: string;
-  percent: string;
-};
-
-type SkillColumn = {
-  titleInSmall?: string;
-  skills: Skill[];
-};
-
-const SKILL_COLUMNS: SkillColumn[] = [
-  {
-    titleInSmall: 'Professional',
-    skills: [
-      { name: 'React', percent: '90%' },
-      { name: 'TypeScript', percent: '90%' },
-      { name: 'Angular', percent: '90%' },
-      { name: 'AngularJs', percent: '90%' },
-    ],
-  },
-  {
-    skills: [
-      { name: 'HTML5/CSS3', percent: '90%' },
-      { name: 'CD/CI', percent: '50%' },
-      { name: 'Java', percent: '35%' },
-      { name: 'NodeJS', percent: '35%' },
-    ],
-  },
-  {
-    titleInSmall: 'Personal',
-    skills: [
-      { name: 'Communication', percent: '75%' },
-      { name: 'Teamwork', percent: '90%' },
-      { name: 'Creativity', percent: '70%' },
-      { name: 'Dedication', percent: '80%' },
-    ],
-  },
-];
-
 export const Skills: FunctionComponent = () => {
+  const resumeContext = useContext(ResumeContext);
+
   const SkillColumn = ({ skillsColumn }: { skillsColumn: SkillColumn }) => (
     <div className="col-md-4 col-sm-4 col-xs-12">
       {!skillsColumn.titleInSmall ? null : (
@@ -53,14 +18,14 @@ export const Skills: FunctionComponent = () => {
       )}
 
       {skillsColumn.skills.map((skill) => (
-        <div key={skill.name} className="skillbar">
-          <div className="skillbar-title">
+        <section key={skill.name} className="skillbar">
+          <section className="skillbar-title">
             <span> {skill.name} </span>
-          </div>
+          </section>
 
-          <div className="skillbar-bar" style={{ width: skill.percent }} />
-          <div className="skill-bar-percent"> {skill.percent} </div>
-        </div>
+          <section className="skillbar-bar" style={{ width: skill.percent }} />
+          <section className="skill-bar-percent"> {skill.percent} </section>
+        </section>
       ))}
     </div>
   );
@@ -74,21 +39,21 @@ export const Skills: FunctionComponent = () => {
 
       <Card className="skills">
         <section className="row">
-          <div className="row hidden-xs">
-            <div className="col-md-8 col-sm-8">
-              <div className="skills__section-title">
+          <section className="row hidden-xs">
+            <section className="col-md-8 col-sm-8">
+              <section className="skills__section-title">
                 <h6 className="text-center">Professional</h6>
-              </div>
-            </div>
+              </section>
+            </section>
 
-            <div className="col-md-4 col-sm-4">
-              <div className="skills__section-title">
+            <section className="col-md-4 col-sm-4">
+              <section className="skills__section-title">
                 <h6 className="text-center">Personal</h6>
-              </div>
-            </div>
-          </div>
+              </section>
+            </section>
+          </section>
 
-          {SKILL_COLUMNS.map((skillsColumn, index) => (
+          {resumeContext.skills.map((skillsColumn, index) => (
             <SkillColumn skillsColumn={skillsColumn} key={`column-${index}`} />
           ))}
         </section>

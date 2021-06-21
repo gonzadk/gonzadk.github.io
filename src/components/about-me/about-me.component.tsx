@@ -1,9 +1,11 @@
 import React, { FunctionComponent, useContext } from 'react';
+import classNames from 'classnames';
 
+import { ResumeContext } from 'contexts/resume/resume.context';
+import { AboutMeDetail, AboutMeLink } from 'contexts/resume/resume.types';
 import { Card } from 'shared-components/card/card.component';
 
 import './about-me.component.scss';
-import { ResumeContext } from '../../contexts/resume/resume.context';
 
 export const AboutMe: FunctionComponent = () => {
   const resumeContext = useContext(ResumeContext);
@@ -11,25 +13,24 @@ export const AboutMe: FunctionComponent = () => {
   /**
    * Returns all the item to be displayed, like email or pages
    */
-  const ProfileInfoItem = ({ item }: { item: any }) => (
-    <li key={item.key} className="about-me__profile-item">
+  const ProfileInfoItem = ({ item }: { item: AboutMeDetail }) => (
+    <li className="about-me__profile-item">
       <span className="about-me__profile-item-title">
         <i className={item.iconClass}>{item.iconName}</i>
       </span>
 
-      <span className="about-me__profile-item-details">{item.details}</span>
+      <span className="about-me__profile-item-details">{item.label}</span>
     </li>
   );
 
-  const Link = ({ link }: { link: any }) => (
+  const Link = ({ link }: { link: AboutMeLink }) => (
     <a
-      key={link.key}
       href={link.href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`social btn-floating ${link.iconColor}`}
+      className={classNames('social', 'btn-floating', link.iconColor)}
     >
-      <i className={`link-icon fa ${link.iconClass}`} />
+      <i className={classNames('link-icon', 'fa', link.iconClass)} />
     </a>
   );
 
@@ -44,19 +45,19 @@ export const AboutMe: FunctionComponent = () => {
 
         <section className="about-me__profile-info">
           <section className="about-me__profile-header">
-            <h4 className="about-me__profile-name">Gonzalo Terzano</h4>
-            <h6 className="about-me__profile-details">Sr Fullstack Developer (Frontend Focus)</h6>
+            <h4 className="about-me__profile-name">{resumeContext.aboutMe.name}</h4>
+            <h6 className="about-me__profile-details">{resumeContext.aboutMe.position}</h6>
           </section>
 
           <ul className="about-me__profile-items-container">
-            {resumeContext.aboutMeDetails.map((item) => (
-              <ProfileInfoItem item={item} key={item.key} />
+            {resumeContext.aboutMe.details.map((item, index) => (
+              <ProfileInfoItem key={index} item={item} />
             ))}
           </ul>
 
           <section className="links">
-            {resumeContext.aboutMeLinks.map((link) => (
-              <Link link={link} key={link.key} />
+            {resumeContext.aboutMe.links.map((link, index) => (
+              <Link key={index} link={link} />
             ))}
           </section>
         </section>

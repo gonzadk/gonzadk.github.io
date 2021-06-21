@@ -1,44 +1,34 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useContext } from 'react';
+import classNames from 'classnames';
 
+import { InterestIcon } from 'contexts/resume/resume.types';
+import { ResumeContext } from 'contexts/resume/resume.context';
 import { Card } from 'shared-components/card/card.component';
 
 import './interest.component.scss';
-import { InterestIcon } from './interest.component.types';
-
-const description: string =
-  'I enjoy watching sports and I love play basketball. Also, I love watching' +
-  'series and movies, or playing video games. I spend my free time traveling and visiting different places,' +
-  'this helps me to keep my mind fresh.';
-
-const interestIcons: InterestIcon[] = [
-  { icon: 'fa-film', label: 'Series & Movies' },
-  { icon: 'fa-futbol-o', label: 'Sports' },
-  { icon: 'fa-gamepad', label: 'Gaming' },
-  { icon: 'fa-plane', label: 'Traveling' },
-  { icon: 'fa-music', label: 'Music' },
-  { icon: 'fa-car', label: 'Cars' },
-];
 
 export const Interest: FunctionComponent = () => {
+  const resumeContext = useContext(ResumeContext);
+
   const InterestIcon = ({ item }: { item: InterestIcon }) => (
     <section className="interest__item">
-      <i className={`fa ${item.icon}`} />
+      <i className={classNames('fa', item.icon)} />
       <span>{item.label}</span>
     </section>
   );
 
   return (
     <section className="interest__container generic-scroll-reveal">
-      <div className="interest__title">
+      <section className="interest__title">
         <i className="title-icon fa fa-heart" />
         Interest
-      </div>
+      </section>
 
       <Card className="interest">
-        <p className="interest__description">{description}</p>
+        <p className="interest__description">{resumeContext.interest.description}</p>
 
         <section className="interest__items-container">
-          {interestIcons.map((item: InterestIcon, index: number) => (
+          {resumeContext.interest.icons.map((item, index: number) => (
             <InterestIcon item={item} key={index} />
           ))}
         </section>

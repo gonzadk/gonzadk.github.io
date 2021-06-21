@@ -10,23 +10,26 @@ export const TimelineList: FunctionComponent<TimelineListProps> = (props: Timeli
     <section>
       {list.map((item: TimelineItem, index: number) => (
         <article key={`timeline-item-${index}`} className="timeline-block">
-          <div className="timeline-dot">
+          <section className="timeline-dot">
             <h6>{item.mainLetter}</h6>
-          </div>
-          <div className="card timeline-content">
-            <div className="card-content">
+          </section>
+
+          <section className="card timeline-content">
+            <section className="card-content">
               <h6 className="timeline-title">
                 {item.titleSmall ? <small>{item.title}</small> : item.title}
               </h6>
-              <div className="timeline-info">
+
+              <section className="timeline-info">
                 <h6>{item.subtitleSmall ? <small>{item.subtitle}</small> : item.subtitle}</h6>
                 <h6>
                   <small>{item.timeline}</small>
                 </h6>
-              </div>
+              </section>
+
               <p> {item.description} </p>
-            </div>
-          </div>
+            </section>
+          </section>
         </article>
       ))}
     </section>

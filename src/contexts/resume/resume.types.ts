@@ -55,11 +55,6 @@ export const RESUME: TResume = {
         iconName: 'email',
       },
       {
-        label: 'resume.gonzadk.com.ar',
-        iconClass: 'material-icons',
-        iconName: 'language',
-      },
-      {
         label: 'Córdoba, Argentina',
         iconClass: 'material-icons',
         iconName: 'place',

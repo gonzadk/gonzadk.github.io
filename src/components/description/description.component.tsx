@@ -7,10 +7,14 @@ import './description.component.scss';
 const DELAY = 5;
 
 const PRESENTATION =
-  "I'm a 31 years old Sr Full Stack Developer (with Front End focus). " +
-  "I'm from Argentina and currently living in Córdoba. " +
-  'I enjoy working on extensive teams and sharing my knowledge in order to help other people to achieve professional success. ' +
-  'I am currently focused on improving my leadership skills and I am also an amateur basketball player. ';
+  `With over 8 years of experience in software engineering,
+  I have a wealth of knowledge and expertise in developing and delivering high-performance,
+  scalable, and secure applications. I am a Senior Software Engineer focused on Frontend side,
+  with a deep understanding of modern technologies, architecture patterns, and software development methodologies.
+  My experience has given me the ability to lead and mentor teams, work collaboratively with cross-functional teams,
+  and deliver projects on time and on budget. I am always seeking new opportunities to learn, grow,
+  and make a positive impact on the projects and teams I work with. My ultimate goal is to deliver innovative
+  and user-friendly software solutions that exceed the expectations of my clients and stakeholders.`
 
 export const Description: FunctionComponent = () => {
   const [currentPresentation, setCurrentPresentation] = useState('');

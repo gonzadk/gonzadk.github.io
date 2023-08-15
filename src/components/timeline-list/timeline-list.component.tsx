@@ -27,7 +27,14 @@ export const TimelineList: FunctionComponent<TimelineListProps> = (props: Timeli
                 </h6>
               </section>
 
-              <p> {item.description} </p>
+              {item.description && (
+                <>
+                  {typeof item.description === 'string' && <p> {item.description} </p>}
+
+                  {typeof item.description !== 'string' &&
+                    item.description.map((descriptionItem) => <p> {descriptionItem} </p>)}
+                </>
+              )}
             </section>
           </section>
         </article>

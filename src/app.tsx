@@ -12,7 +12,6 @@ import { HeaderParticles } from 'components/header-particles/header-particles.co
 import { PreLoading } from 'components/pre-loading/pre-loading.component';
 import { Skills } from 'components/skills/skills.component';
 import { Interest } from 'components/interest/interest.component';
-import { Location } from 'components/location/location.component';
 import { Experience } from 'components/experience/experience.component';
 import { Education } from 'components/education/education.component';
 import { ResumeContextProvider } from 'contexts/resume/resume.context';
@@ -56,7 +55,6 @@ class AppComponent extends React.Component<{}, AppState> {
               <Skills />
               <Education />
               <Interest />
-              <Location />
             </section>
           </ResumeContextProvider>
         )}

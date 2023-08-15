@@ -1,5 +1,5 @@
 export type TimelineItem = {
-  description: string;
+  description?: string | string[];
   mainLetter: string;
   subtitle: string;
   subtitleSmall?: boolean;

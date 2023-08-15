@@ -5,9 +5,12 @@
   "private": false,
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && cp CNAME build/CNAME",
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build"
+  },
+  "volta": {
+    "node": "14.21.3"
   },
   "dependencies": {
     "bootstrap": "3.4.1",

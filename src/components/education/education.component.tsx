@@ -1,26 +1,50 @@
-import React, { FunctionComponent, useContext } from 'react';
+import React, { FunctionComponent, useContext } from 'react'
 
-import { Card } from 'shared-components/card/card.component';
-import { TimelineList } from 'components/timeline-list/timeline-list.component';
-import { ResumeContext } from 'contexts/resume/resume.context';
-
-import './education.component.scss';
+import { ResumeContext } from '../../contexts'
 
 export const Education: FunctionComponent = () => {
-  const resumeContext = useContext(ResumeContext);
+  const resumeContext = useContext(ResumeContext)
 
   return (
-    <Card className="education generic-scroll-reveal" transparent>
-      <section className="education__title">
-        <h4 className="text-uppercase text-center">
-          <i className="title-icon fa fa-graduation-cap" />
+    <section
+      id="education"
+      className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+      aria-label="Professional education"
+    >
+      <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+        <h2 className="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">
           Education
-        </h4>
-      </section>
+        </h2>
+      </div>
 
-      <section className="education__timeline">
-        <TimelineList list={resumeContext.education} />
-      </section>
-    </Card>
-  );
-};
+      <div>
+        <ol className="group/list">
+          {resumeContext.education.map((education) => (
+            <li className="mb-12" key={education.title}>
+              <div className="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+                <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
+                <header
+                  className="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2"
+                  aria-label="2018 to Present"
+                >
+                  {education.timeline}
+                </header>
+
+                <div className="z-10 sm:col-span-6">
+                  <h3 className="font-medium leading-snug text-slate-200">
+                    <div className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link text-base">
+                      <span className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block" />
+                      <span>{education.title}</span>
+                    </div>
+                  </h3>
+
+                  <p className="mt-2 text-sm leading-normal">{education.place}</p>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  )
+}

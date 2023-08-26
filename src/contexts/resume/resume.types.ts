@@ -1,53 +1,52 @@
-import { TimelineItem } from 'components/timeline-list/timeline-list.component.types';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { IconDefinition } from '@fortawesome/free-solid-svg-icons'
 
 export type TResume = {
   aboutMe: {
-    name: string;
-    position: string;
-    details: AboutMeDetail[];
-    links: AboutMeLink[];
-  };
-  education: TimelineItem[];
-  experience: TimelineItem[];
-  interest: {
-    description: string;
-    icons: InterestIcon[];
-  };
-  skills: SkillColumn[];
-};
+    name: string
+    position: string
+    description: string
+    details: AboutMeDetail[]
+    links: AboutMeLink[]
+  }
+  description: string[]
+  education: Education[]
+  experience: Experience[]
+}
+
+export type Experience = {
+  company: string
+  description: string[]
+  role: string
+  timeline: string
+  website: string
+  skills: string[]
+}
+
+export type Education = {
+  title: string
+  place: string
+  timeline: string
+}
 
 export type AboutMeLink = {
-  href: string;
-  iconClass: string;
-  iconColor: string;
-};
+  href: string
+  icon: IconDefinition
+}
 
 export type AboutMeDetail = {
-  label: string;
-  iconClass: string;
-  iconName: string;
-};
-
-export type InterestIcon = {
-  icon: string;
-  label: string;
-};
-
-export type Skill = {
-  name: string;
-  percent: string;
-};
-
-export type SkillColumn = {
-  titleInSmall?: string;
-  skills: Skill[];
-};
+  label: string
+  iconClass: string
+  iconName: string
+}
 
 export const RESUME: TResume = {
   aboutMe: {
     name: 'Gonzalo Terzano',
     position:
       'Sr Software Engineer | React, Typescript, NextJs, Node, Leadership | Frontend Specialist',
+    description:
+      "Remotely working from Argentina, I'm an enthusiast crafting pixel-perfect designs into interactive web experiences, prioritizing performance and simplicity.",
     details: [
       {
         label: 'gonzaloterzano@gmail.com',
@@ -61,40 +60,32 @@ export const RESUME: TResume = {
       },
     ],
     links: [
-      {
-        href: 'https://www.linkedin.com/in/gonzalo-terzano',
-        iconColor: 'blue darken-3',
-        iconClass: 'fa-linkedin',
-      },
-      {
-        href: 'https://www.github.com/gonzadk',
-        iconColor: 'grey darken-3',
-        iconClass: 'fa-github',
-      },
+      { href: 'https://www.linkedin.com/in/gonzalo-terzano', icon: faLinkedin },
+      { href: 'https://www.github.com/gonzadk', icon: faGithub },
     ],
   },
+  description: [
+    'With over 8 years of experience in software engineering, I have a wealth of knowledge and expertise in developing and delivering high-performance, scalable, and secure applications. I am a Senior Software Engineer focused on Frontend side, with a deep understanding of modern technologies, architecture patterns, and software development methodologies.',
+    'My experience has given me the ability to lead and mentor teams, work collaboratively with cross-functional teams, and deliver projects on time and on budget. I am always seeking new opportunities to learn, grow, and make a positive impact on the projects and teams I work with.',
+    'My ultimate goal is to deliver innovative and user-friendly software solutions that exceed the expectations of my clients and stakeholders.',
+  ],
   education: [
     {
-      mainLetter: 'D',
       title: 'Degree in Computer Science',
-      subtitle: 'National University of San Juan - FCEFyN',
-      subtitleSmall: true,
+      place: 'National University of San Juan - FCEFyN',
       timeline: 'Mar 2009 - Dic 2014',
     },
     {
-      mainLetter: 'H',
       title: 'High School - Electronics Technician',
-      subtitle: 'National University of San Juan - EIDFS - ARG',
-      subtitleSmall: true,
+      place: 'National University of San Juan - EIDFS - ARG',
       timeline: 'Mar 2005 - Dic 2008',
     },
   ],
   experience: [
     {
-      mainLetter: 'M',
-      title: 'Medable',
-      titleSmall: true,
-      subtitle: 'Sr Developer, Front End',
+      company: 'Medable',
+      website: 'https://www.medable.com/',
+      role: 'Sr Developer, Front End',
       timeline: 'Jan 2022 - Present',
       description: [
         '● Led the development of a new internationalization solution that supports over 120 locales, demonstrating ownership and initiative.',
@@ -104,12 +95,21 @@ export const RESUME: TResume = {
         '● Defining and enforcing coding standards, best practices, and performance optimization techniques to ensure the maintainability and scalability of the codebase.',
         '● Managing the frontend development process, including prioritizing and tracking project tasks, reviewing code, and ensuring timely delivery.',
       ],
+      skills: [
+        'React',
+        'Typescript',
+        'Cypress',
+        'Localization',
+        'tailwind',
+        'Leadership',
+        'NX',
+        'Jest',
+      ],
     },
     {
-      mainLetter: 'H',
-      title: 'Halo Media LLC',
-      titleSmall: true,
-      subtitle: 'Sr Software Engineer',
+      company: 'Halo Media LLC',
+      website: 'https://halopowered.com/',
+      role: 'Sr Software Engineer',
       timeline: 'Sep 2021 - Dec 2021',
       description: [
         '● Provided visionary leadership for a highly customizable and generic project, elevating it to new heights through strategic planning and execution.',
@@ -117,12 +117,12 @@ export const RESUME: TResume = {
         '● Conducted technical evaluations for React positions, leveraging expertise to identify top talent and build a high-performing frontend team.',
         '● Spearheaded the creation of an internal, reusable library, establishing best practices and streamlining processes to increase efficiency and productivity.',
       ],
+      skills: ['React', 'Typescript', 'Node.js', 'Leadership'],
     },
     {
-      mainLetter: 'R',
-      title: 'Raftr',
-      titleSmall: true,
-      subtitle: 'Sr Frontend Engineer & Web Lead',
+      company: 'Raftr',
+      website: 'https://www.raftr.com/',
+      role: 'Sr Frontend Engineer & Web Lead',
       timeline: 'Apr 2020 - Jun 2021',
       description: [
         '● Led a 4 people team working on a three-projects solution.',
@@ -134,12 +134,12 @@ export const RESUME: TResume = {
         '● Created a new isolated project working as a micro-frontend and a common library to share among those projects (and future ones).',
         '● Pushed different web standards to be the default on the different web projects (Typescript, Pull Request, correct tracking of work, etc).',
       ],
+      skills: ['React', 'Next.js', 'Typescript', 'Lerna', 'Leadership'],
     },
     {
-      mainLetter: '24',
-      title: '24 Hour Fitness',
-      titleSmall: true,
-      subtitle: 'Software Engineer',
+      company: '24 Hour Fitness',
+      website: 'https://www.24hourfitness.com/',
+      role: 'Software Engineer',
       timeline: 'Oct 2019 - Apr 2020',
       description: [
         '● Designed and developed a new platform for purchasing Gym memberships, allowing users to add different ancillary products to complement the membership.',
@@ -148,12 +148,12 @@ export const RESUME: TResume = {
         '● Added CI/CD for the project',
         '● Coordinated a three contractors team to match product owner expectations',
       ],
+      skills: ['Angular', 'Typescript', 'Jest'],
     },
     {
-      mainLetter: 'T',
-      title: 'ThirdLove',
-      titleSmall: true,
-      subtitle: 'Full Stack Engineer',
+      company: 'ThirdLove',
+      website: 'https://www.thirdlove.com/',
+      role: 'Full Stack Engineer',
       timeline: 'Jun 2019 - Sep 2019',
       description: [
         "● Re-designed and developed one the company's insignia app called FitFinder that run as micro frontend project connected to different BE micro services",
@@ -161,12 +161,12 @@ export const RESUME: TResume = {
         '● Worked on different CI/CD Integrations',
         '● Created an application for easy deployments on AWS via cmd',
       ],
+      skills: ['React', 'Node.js', 'Typescript', 'Jest'],
     },
     {
-      mainLetter: 'M',
-      title: 'McAfee',
-      titleSmall: true,
-      subtitle: 'Software Development Engineer',
+      company: 'McAfee',
+      website: 'https://www.mcafee.com/',
+      role: 'Software Development Engineer',
       timeline: 'Feb 2017 - May 2019',
       description: [
         '● Led 3 teams of 5-6 people each (shared leadership)',
@@ -175,75 +175,7 @@ export const RESUME: TResume = {
         '● Led features end-to-end (Architectural designs, DB communication, wireframes feedbacks, mocks feedbacks, and productive code deployment)',
         '● Designed and developed an integrated application that will run partially on Angular and partially on AngularJs (to support retro-compatibility)',
       ],
-    },
-    {
-      mainLetter: 'G',
-      title: 'Globant',
-      titleSmall: true,
-      subtitle: 'Web UI Developer',
-      timeline: 'Feb 2016 - Jan 2017',
-      description:
-        'I worked on a busy team, sometimes under pressure, making friendly & interactive projects of eLearning on short periods of time.',
-    },
-    {
-      mainLetter: 'T',
-      title: 'TravelPAQ',
-      titleSmall: true,
-      subtitle: 'Fullstack Web Developer',
-      timeline: 'Aug 2015 - Jan 2016',
-      description:
-        'Great startup Company in which I worked on backend and frontend ' +
-        'technologies but where I also had to perform deployments and configuration tasks on the servers.',
-    },
-    {
-      mainLetter: 'A',
-      title: 'National University of San Juan, FCEFyN',
-      titleSmall: true,
-      subtitle: 'Teaching Assistant Professor',
-      timeline: 'Apr 2010 - Jan 2016',
-      description:
-        'Helped on practical classes and gave classes in some cases. ' +
-        'It was the place where I discovered that I like teaching and helping people.',
+      skills: ['Angular', 'Typescript', 'Jest', 'Leadership'],
     },
   ],
-  interest: {
-    description: `I enjoy watching sports and I love play basketball. Also, I love watching series and movies,
-      or playing video games. I spend my free time traveling and visiting different places this helps me to keep my mind fresh.`,
-    icons: [
-      { icon: 'fa-film', label: 'Series & Movies' },
-      { icon: 'fa-futbol-o', label: 'Sports' },
-      { icon: 'fa-gamepad', label: 'Gaming' },
-      { icon: 'fa-plane', label: 'Traveling' },
-      { icon: 'fa-music', label: 'Music' },
-      { icon: 'fa-car', label: 'Cars' },
-    ],
-  },
-  skills: [
-    {
-      titleInSmall: 'Professional',
-      skills: [
-        { name: 'React', percent: '90%' },
-        { name: 'TypeScript', percent: '90%' },
-        { name: 'Angular', percent: '90%' },
-        { name: 'AngularJs', percent: '90%' },
-      ],
-    },
-    {
-      skills: [
-        { name: 'HTML5/CSS3', percent: '90%' },
-        { name: 'CD/CI', percent: '70%' },
-        { name: 'Java', percent: '35%' },
-        { name: 'NodeJS', percent: '35%' },
-      ],
-    },
-    {
-      titleInSmall: 'Personal',
-      skills: [
-        { name: 'Communication', percent: '75%' },
-        { name: 'Teamwork', percent: '90%' },
-        { name: 'Creativity', percent: '70%' },
-        { name: 'Dedication', percent: '80%' },
-      ],
-    },
-  ],
-};
+}

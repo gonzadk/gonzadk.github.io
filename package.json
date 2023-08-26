@@ -13,19 +13,18 @@
     "node": "14.21.3"
   },
   "dependencies": {
-    "bootstrap": "3.4.1",
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-brands-svg-icons": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "classnames": "^2.3.2",
     "font-awesome": "4.7.0",
     "gh-pages": "^6.0.0",
-    "materialize-css": "1.0.0",
     "node-sass": "^6.0.1",
-    "normalize.css": "^4.0.0",
-    "particlesjs": "^2.2.3",
     "prettier": "^2.8.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
-    "scrollreveal": "^4.0.9",
     "typescript": "^5.1.6",
     "web-vitals": "^1.1.0"
   },
@@ -34,7 +33,9 @@
     "@types/node": "^14.14.31",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
-    "@types/scrollreveal": "0.0.8"
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.28",
+    "tailwindcss": "^3.3.3"
   },
   "eslintConfig": {
     "extends": "react-app"

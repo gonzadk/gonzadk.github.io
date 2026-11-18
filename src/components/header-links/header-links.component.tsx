@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext } from 'react'
+import { FunctionComponent, useContext } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { ResumeContext } from '../../contexts'
 
@@ -15,7 +15,7 @@ export const HeaderLinks: FunctionComponent = () => {
             rel="noopener noreferrer"
             className="block hover:text-slate-200"
           >
-            <FontAwesomeIcon color="#d9e3fb" size="2xl" icon={link.icon} />
+            <FontAwesomeIcon widthAuto color="#d9e3fb" size="2xl" icon={link.icon} />
           </a>
         </li>
       ))}

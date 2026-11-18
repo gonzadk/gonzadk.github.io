@@ -1,4 +1,4 @@
-import React, { FunctionComponent, MouseEvent, useState } from 'react'
+import { FunctionComponent, MouseEvent, useState } from 'react'
 import classNames from 'classnames'
 
 interface Section {

@@ -1,5 +1,4 @@
-import React from 'react'
-import './app.scss'
+import './app.css'
 import { MainWrapper } from './components'
 
 export const AppComponent = () => {

@@ -44,9 +44,9 @@ export const RESUME: TResume = {
   aboutMe: {
     name: 'Gonzalo Terzano',
     position:
-      'Sr Software Engineer | React, Typescript, NextJs, Node, Leadership | Frontend Specialist',
+      'Staff Software Engineer & Tech Lead @ Medable | AI & Product Frontend | React, TypeScript, Next.js',
     description:
-      "Remotely working from Argentina, I'm an enthusiast crafting pixel-perfect designs into interactive web experiences, prioritizing performance and simplicity.",
+      "Remotely working from Argentina, I'm building AI-powered products and crafting pixel-perfect designs into interactive web experiences, prioritizing performance and simplicity.",
     details: [
       {
         label: 'gonzaloterzano@gmail.com',
@@ -65,9 +65,10 @@ export const RESUME: TResume = {
     ],
   },
   description: [
-    'With over 11 years of experience in software engineering, I have a wealth of knowledge and expertise in developing and delivering high-performance, scalable, and secure applications. I am a Senior Software Engineer focused on Frontend side, with a deep understanding of modern technologies, architecture patterns, and software development methodologies.',
-    'My experience has given me the ability to lead and mentor teams, work collaboratively with cross-functional teams, and deliver projects on time and on budget. I am always seeking new opportunities to learn, grow, and make a positive impact on the projects and teams I work with.',
-    'My ultimate goal is to deliver innovative and user-friendly software solutions that exceed the expectations of my clients and stakeholders.',
+    'Staff Software Engineer and Tech Lead with 11+ years of experience building scalable, user-focused products.',
+    'I specialize in turning complex technical and product challenges into intuitive experiences, combining hands-on engineering with architecture, technical leadership, and mentoring.',
+    'Throughout my career, I’ve helped build and launch products used by thousands of users, contributed to significant enterprise revenue, and led teams through complex product and platform initiatives.',
+    'I’m especially interested in product engineering, frontend architecture, and AI-powered experiences where strong technical decisions can directly improve the product and the business.',
   ],
   education: [
     {
@@ -85,20 +86,22 @@ export const RESUME: TResume = {
     {
       company: 'Medable',
       website: 'https://www.medable.com/',
-      role: 'Sr Developer, Front End',
+      role: 'Staff Software Engineer & Tech Lead',
       timeline: 'Jan 2022 - Present',
       description: [
-        '● Currently leading UI architecture and development for Agent Studio, a next-generation product projected to generate $35M+ in contracts upon release.',
-        '● Led development and release of Medable Studio, enabling its successful launch and directly contributing to securing a $20.4M enterprise contract.',
-        '● Built a robust E2E test suite, reducing our testing time from 1-2 weeks to 1-2 days, considering existing manual executions.',
-        '● Directed frontend lifecycle: architecture, planning, implementation, and deployment.',
-        '● Mentored engineers and enforced coding standards to ensure scalability and maintainability.',
-        '● Optimized frontend performance and user experience for long-term reliability.',
+        '● Career path: Sr Developer, Front End (2022) → Tech Lead, Software Engineer II (2024) → Staff Software Engineer & Tech Lead (2026).',
+        '● Lead frontend architecture and development for Agent Studio, Medable’s agentic AI platform, helping deliver capabilities supporting $18M+ in enterprise customer commitments.',
+        '● Led the development and launch of Medable Studio, directly contributing to a $20.4M enterprise contract and supporting additional enterprise deals.',
+        '● Built and scaled automated E2E testing and CI workflows, reducing validation cycles from 1–2 weeks to 1–2 days.',
+        '● Drove technical direction across complex frontend initiatives, working hands-on with React, TypeScript, Next.js, monorepos, APIs, and AI-powered product experiences.',
+        '● Mentored engineers, led architecture and code reviews, and raised engineering standards across the team.',
       ],
       skills: [
         'Leadership',
+        'AI',
         'React',
         'Typescript',
+        'Next.js',
         'Playwright',
         'Tailwind',
         'Framer Motion',

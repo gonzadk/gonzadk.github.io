@@ -178,6 +178,7 @@ export const buildScenes = (resume: TResume, photo: string): Scene[] => {
               </a>
             ))}
           </div>
+          <p className="outro">{aboutMe.outro}</p>
         </footer>
       ),
     }

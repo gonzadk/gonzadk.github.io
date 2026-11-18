@@ -2,7 +2,7 @@ My personal resume
 
 Use https://gonzadk.github.io to access to a live demo
 
-Built with [Vite](https://vite.dev), React, TypeScript and Tailwind CSS. Requires Node.js 20.19+ (22 LTS recommended).
+Built with [Vite](https://vite.dev), React and TypeScript. The page is a scroll-driven 3D "rewind" through the timeline, with a WebGL aurora background (`src/components`). Content lives in `src/contexts/resume/resume.types.ts`. Requires Node.js 20.19+ (22 LTS recommended).
 
 ## Available Scripts
 

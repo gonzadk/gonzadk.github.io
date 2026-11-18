@@ -10,6 +10,8 @@ export type TResume = {
     email: string
     location: string
     links: AboutMeLink[]
+    /** Closing line under the contact links. */
+    outro: string
   }
   profile: {
     title: string
@@ -52,9 +54,9 @@ export const RESUME: TResume = {
   aboutMe: {
     name: 'Gonzalo Terzano',
     shortRole: 'Staff Engineer',
-    position: 'Staff Software Engineer · Tech Lead · AI Product Frontend',
+    position: 'Staff Software Engineer · Tech Lead · AI-native products',
     description:
-      'Building AI-powered products and crafting pixel-perfect designs into interactive web experiences — remotely, from Córdoba, Argentina.',
+      'I build the interfaces where people and AI agents work together — agentic platforms, AI-powered workflows and the frontend architecture that makes them feel effortless. Remote from Córdoba, Argentina.',
     email: 'gonzaloterzano@gmail.com',
     location: 'Córdoba, AR',
     links: [
@@ -62,15 +64,16 @@ export const RESUME: TResume = {
       { label: 'GitHub ↗', href: 'https://www.github.com/gonzadk' },
       { label: 'Resume PDF ↓', href: 'resume.pdf' },
     ],
+    outro: 'Designed with AI, reviewed by a human. Hallucinations detected: 0 — that we know of.',
   },
   profile: {
-    title: '11+ years turning hard problems into simple products.',
-    lead: 'I combine hands-on engineering with architecture, technical leadership and mentoring — and I’ve helped launch products used by thousands of users and backed by significant enterprise revenue.',
-    body: 'Most interested in product engineering, frontend architecture and AI-powered experiences — where strong technical decisions directly move the product and the business.',
+    title: 'Engineering for the agentic era.',
+    lead: '11+ years shipping products — now focused on the layer where AI meets people: agent platforms, AI-powered workflows and the UX that turns powerful models into products people actually trust and use.',
+    body: 'I work AI-first, treating agents as part of the toolchain for building, reviewing and testing, while bringing the architecture, technical leadership and mentoring that keep quality high as teams move faster.',
   },
   impact: [
     { value: '$20.4M', caption: 'Enterprise contract — Medable Studio' },
-    { value: '$18M+', caption: 'Commitments — Agent Studio' },
+    { value: '$18M+', caption: 'Enterprise commitments — Agent Studio (agentic AI)' },
     { value: '2w→2d', caption: 'Validation cycles via E2E + CI' },
     { value: '11+', caption: 'Years shipping products' },
   ],
@@ -95,13 +98,13 @@ export const RESUME: TResume = {
       startYear: '2022',
       current: true,
       highlights: [
-        'Sr FE (2022) → Tech Lead (2024) → **Staff & Tech Lead (2026)**',
-        'Frontend architecture for **Agent Studio**, the agentic AI platform — **$18M+** in commitments',
-        'Led the launch of **Medable Studio**, contributing to a **$20.4M** contract',
+        'Lead frontend architecture for **Agent Studio**, Medable’s **agentic AI platform** — capabilities backing **$18M+** in enterprise commitments',
+        'Led the launch of **Medable Studio**, contributing to a **$20.4M** enterprise contract',
         'E2E + CI that cut validation from **1–2 weeks to 1–2 days**',
-        'Mentoring, architecture and code reviews across the team',
+        'Technical direction across AI-powered product experiences, monorepos and APIs',
+        'Sr FE (2022) → Tech Lead (2024) → **Staff & Tech Lead (2026)**',
       ],
-      skills: ['AI', 'React', 'TypeScript', 'Next.js', 'Playwright', 'NX', 'Framer Motion'],
+      skills: ['Agentic AI', 'AI UX', 'React', 'TypeScript', 'Next.js', 'Playwright', 'NX'],
     },
     {
       company: 'Halo Media',

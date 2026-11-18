@@ -1,6 +1,9 @@
 import './app.css'
-import { MainWrapper } from './components'
+import { Tunnel } from './components'
+import { ResumeContextProvider } from 'contexts'
 
-export const AppComponent = () => {
-  return <MainWrapper />
-}
+export const AppComponent = () => (
+  <ResumeContextProvider>
+    <Tunnel />
+  </ResumeContextProvider>
+)
